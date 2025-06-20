@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ôn tập cùng LearnQuiz</title>
+    <link rel="stylesheet" href="/css/About.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/lienHe.css" />
+  </head>
+  <body>
+    <!-- Nút duy nhất trên navbar -->
+    <nav class="navbar">
+      <div class="nav-logo">
+        <div class="logo">
+          <img src="/img/ảnhlogo-removebg-preview.png" alt="" />
+        </div>
+      </div>
+
+      <div class="nav-buttons">
+        <button class="contact-btn" onclick="openPopupLienHe()">Liên hệ</button>
+        <button class="login-btn" onclick="openAuthModal()">Đăng nhập</button>
+        <div
+          id="userInfo"
+          style="display: none; align-items: center; gap: 10px"
+        >
+          <img
+            id="userAvatar"
+            src="/img/default-avt.png"
+            alt="Avatar"
+            style="width: 32px; height: 32px; border-radius: 50%"
+          />
+          <span id="userName"></span>
+          <div class="nav-buttons"></div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Modal gộp đăng nhập + đăng ký -->
+    <div id="authModalOverlay" class="modal-overlay" style="display: none">
+      <div class="auth-modal-box">
+        <div class="auth-form-container">
+          <!-- Form Đăng Nhập -->
+          <form id="loginForm" class="auth-form active">
+            <h2>Đăng nhập</h2>
+            <input name="email" type="email" placeholder="Gmail" required />
+            <input
+              name="password"
+              type="password"
+              placeholder="Mật khẩu"
+              required
+            />
+            <button type="submit" class="login-btn">Đăng nhập</button>
+          </form>
+
+          <!-- Form Đăng Ký -->
+          <form id="registerForm" class="auth-form">
+            <h2>Đăng ký</h2>
+            <input name="name" placeholder="Họ tên" required />
+            <input name="email" type="email" placeholder="Gmail" required />
+            <input
+              name="password"
+              type="password"
+              placeholder="Mật khẩu"
+              required
+            />
+            <p
+              id="registerForm-password-error"
+              style="color: red; font-size: 13px; display: none"
+            >
+              Mật khẩu phải có ít nhất 8 ký tự.
+            </p>
+            <input name="phone" placeholder="Số điện thoại" required />
+            <input name="dob" type="date" required />
+            <select name="role" required>
+              <option value="Sinh viên">Sinh viên</option>
+              <option value="Học sinh">Học sinh</option>
+              <option value="Giáo viên">Giáo viên</option>
+            </select>
+            <select name="gender" required>
+              <option value="Nam">Nam</option>
+              <option value="Nữ">Nữ</option>
+              <option value="Khác">Khác</option>
+            </select>
+            <button type="submit" class="login-btn">Đăng ký</button>
+          </form>
+        </div>
+
+        <div class="auth-side-panel">
+          <div id="login-side">
+            <h3>Chưa có tài khoản?</h3>
+            <p>Tạo tài khoản miễn phí và bắt đầu ôn tập ngay.</p>
+            <button onclick="switchToRegister()">Đăng ký ngay</button>
+          </div>
+          <div id="register-side" style="display: none">
+            <h3>Đã có tài khoản?</h3>
+            <p>Quay lại để đăng nhập và bắt đầu làm bài.</p>
+            <button onclick="switchToLogin()">Đăng nhập ngay</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="contactPopupContainer"></div>
+
+    <section class="intro-section">
+      <div class="intro-content">
+        <h1>LearnQuiz – Ôn tập dễ dàng, học tập thông minh</h1>
+        <p>
+          Nền tảng luyện thi trực tuyến giúp bạn làm bài trắc nghiệm nhanh
+          chóng, tạo đề bằng AI, theo dõi tiến độ học tập cá nhân và cải thiện
+          từng ngày.
+        </p>
+        <button class="start-button">Bắt đầu ngay</button>
+      </div>
+    </section>
+
+    <section class="simple">
+      <div class="content">
+        <h1>Chào mừng đến với <span class="highlight">LearnQuiz.vn</span></h1>
+        <p>
+          <strong>LearnQuiz</strong> là nền tảng học tập và ôn luyện thi qua các
+          bài trắc nghiệm tương tác, giúp học sinh, sinh viên và giáo viên tạo
+          đề, làm bài và theo dõi tiến trình học tập một cách tối ưu.
+        </p>
+        <p>
+          Với giao diện thân thiện, hệ thống tự động chấm điểm và thống kê chính
+          xác, LearnQuiz hỗ trợ người học ở mọi cấp độ và lĩnh vực. Bạn có thể
+          dễ dàng chia sẻ đề thi, tạo nhóm học và xem lại lịch sử làm bài chi
+          tiết.
+        </p>
+        <ul>
+          <li>
+            <span class="icon">📚</span> Thư viện câu hỏi phong phú, phân loại
+            theo từng môn học
+          </li>
+          <li>
+            <span class="icon">⚡</span> Tạo đề nhanh chóng từ file Word, PDF
+            nhờ AI hỗ trợ
+          </li>
+          <li>
+            <span class="icon">📈</span> Theo dõi kết quả làm bài và tiến bộ học
+            tập
+          </li>
+        </ul>
+        <p>
+          Dù bạn là học sinh đang chuẩn bị cho kỳ thi, hay giáo viên muốn quản
+          lý lớp học hiệu quả hơn, <strong>LearnQuiz</strong> sẽ là trợ lý học
+          tập đáng tin cậy của bạn.
+        </p>
+        <button class="start-button">Thử ngay</button>
+      </div>
+    </section>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>📚 Ngân hàng câu hỏi</h3>
+        <p>
+          Hơn 1000+ câu hỏi phân theo môn học như Toán, CSDL, Kiến trúc máy...
+        </p>
+      </div>
+      <div class="feature-card">
+        <h3>⚡ Tạo đề nhanh chóng</h3>
+        <p>
+          Hỗ trợ tạo đề từ Word, PDF hoặc chọn ngẫu nhiên bằng hệ thống gợi ý.
+        </p>
+      </div>
+      <div class="feature-card">
+        <h3>📈 Theo dõi tiến trình</h3>
+        <p>Lưu kết quả, so sánh điểm và cải thiện hiệu quả từng ngày.</p>
+      </div>
+      <div class="feature-card">
+        <h3>👤 Tài khoản cá nhân</h3>
+        <p>Đăng nhập, chỉnh sửa thông tin, xem lịch sử và gợi ý đề phù hợp.</p>
+      </div>
+      <div class="feature-card">
+        <h3>📊 Kết quả chi tiết</h3>
+        <p>Xem số câu đúng/sai, thời gian làm bài và đánh giá năng lực.</p>
+      </div>
+      <div class="feature-card">
+        <h3>🖥 Giao diện thân thiện</h3>
+        <p>
+          Dễ dùng trên cả máy tính và điện thoại. Tập trung tối ưu trải nghiệm.
+        </p>
+      </div>
+    </div>
+
+    <section class="simple">
+      <div class="content">
+        <h1>Học tập <span class="highlight">mọi lúc mọi nơi</span></h1>
+        <p>
+          Không cần cài đặt phức tạp, không giới hạn thiết bị – chỉ cần kết nối
+          Internet, bạn đã có thể truy cập <strong>LearnQuiz</strong> và bắt đầu
+          học tập, ôn luyện mọi lúc.
+        </p>
+        <ul>
+          <li>
+            <span class="icon">🌐</span> Truy cập <strong>LearnQuiz</strong> từ
+            mọi thiết bị có internet — máy tính, điện thoại, máy tính bảng
+          </li>
+          <li>
+            <span class="icon">🚀</span> Tiết kiệm thời gian, linh hoạt học tập
+            theo cách của bạn, không giới hạn không gian hay thời gian
+          </li>
+        </ul>
+        <p>
+          Dù bạn đang trên đường đi học, ở nhà hay trong quán cà phê, chỉ với
+          vài cú nhấp chuột là bạn đã sẵn sàng chinh phục kiến thức mới.
+        </p>
+        <button class="start-button">Bắt đầu ngay</button>
+      </div>
+    </section>
+
+    <section class="feature">
+      <div class="image-side">
+        <img src="/img/giaoDien.png" alt="Giao diện làm bài thi" />
+      </div>
+      <div class="text-side">
+        <div class="label">Tính năng nổi bật</div>
+        <h2>
+          <span class="highlight">Cá nhân hoá</span> lộ trình học <br />
+          <span class="normal">và tối ưu trải nghiệm người dùng</span>
+        </h2>
+        <p>
+          👤 Giao diện trực quan, dễ sử dụng cho mọi đối tượng. Người học có thể
+          tạo tài khoản và xây dựng lộ trình học riêng theo mục tiêu của mình.
+        </p>
+        <p>
+          👑 Mỗi người dùng đều có quyền theo dõi kết quả, lưu trữ bài làm và
+          nhận đề xuất phù hợp với trình độ hiện tại.
+        </p>
+        <button class="start-button">Khám phá thêm</button>
+      </div>
+    </section>
+    <div id="contactPopupContainer"></div>
+    <div id="footer-container"></div>
+    <script>
+      fetch("footer.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("footer-container").innerHTML = data;
+        });
+
+      fetch("/lienHe.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.body.insertAdjacentHTML("beforeend", html);
+
+          const popup = document.getElementById("popupLienHe");
+          const openBtn = document.querySelector(".contact-btn");
+          const closeBtn = popup?.querySelector(".popup-lienhe-close");
+          const contactForm = popup?.querySelector("#contactForm");
+
+          if (openBtn && popup) {
+            openBtn.addEventListener("click", () => {
+              popup.style.display = "flex";
+            });
+          }
+
+          if (closeBtn && popup) {
+            closeBtn.addEventListener("click", () => {
+              popup.style.display = "none";
+            });
+          }
+
+          if (contactForm) {
+            contactForm.addEventListener("submit", (e) => {
+              e.preventDefault();
+              contactForm.reset();
+              const msg = document.createElement("p");
+              msg.textContent = "✅ Đã gửi liên hệ!";
+              msg.style.color = "green";
+              msg.style.textAlign = "center";
+              contactForm.appendChild(msg);
+              setTimeout(() => {
+                msg.remove();
+                popup.style.display = "none";
+              }, 2000);
+            });
+          }
+        });
+    </script>
+
+    <script src="/js/About.js"></script>
+  </body>
+</html>

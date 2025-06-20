@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Làm Bài Thi</title>
+    <link rel="stylesheet" href="/css/quiz.css" />
+  </head>
+  <body>
+    <div id="countdownOverlay">
+      <div class="countdown-container">
+        <p>Vui lòng chờ giây lát để vào làm bài thi</p>
+        <div class="circle-timer">
+          <svg viewBox="0 0 120 120">
+            <circle class="bg" cx="60" cy="60" r="54" />
+            <circle
+              class="progress"
+              cx="60"
+              cy="60"
+              r="54"
+              id="progressCircle"
+            />
+          </svg>
+          <div id="countdownNumber">5</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="quiz-wrapper" style="display: none" id="quizWrapper">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <h3 id="subjectTitle">📘 Môn thi:</h3>
+
+        <div id="timerBox">⏱️ Thời gian: <span id="timer">00:00</span></div>
+
+        <label for="autoNext">Tự động chuyển câu:</label>
+        <select id="autoNext">
+          <option value="0">Tắt</option>
+          <option value="2">2s</option>
+          <option value="5">5s</option>
+          <option value="10">10s</option>
+        </select>
+
+        <br /><br />
+        <button onclick="window.location.href='dashboard.html'">
+          🔙 Trở về
+        </button>
+
+        <hr />
+
+        <p class="section-title">
+          <strong>Phần thi (<span id="totalCount">--</span> câu)</strong>
+        </p>
+
+        <div id="progressInfo">
+          <p>
+            ✅ Tiến độ: <span id="progressDone">0</span> /
+            <span id="totalCount">40</span>
+          </p>
+          <p>
+            🟢 Đúng: <span id="correctCount">0</span> | 🔴 Sai:
+            <span id="wrongCount">0</span>
+          </p>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <div id="quizContainer">...</div>
+      </main>
+
+      <!-- Navigation -->
+      <aside class="question-nav">
+        <p class="ML">Mục lục câu hỏi</p>
+        <div id="questionNavGrid" class="grid"></div>
+        <div class="nav-controls">
+          <button onclick="prevQuestion()">◀ Trước</button>
+          <button onclick="nextQuestion()">Sau ▶</button>
+        </div>
+        <button id="submitBtn">Nộp bài thi</button>
+      </aside>
+    </div>
+
+    <div id="resultPopup" class="popup hidden">
+      <div class="popup-content">
+        <h2>Kết quả làm bài</h2>
+        <p id="popupScore"></p>
+        <p id="popupTime"></p>
+        <p id="popupDetails"></p>
+        <button onclick="closePopup()">Đóng</button>
+      </div>
+    </div>
+    <script src="/js/quiz.js" defer></script>
+  </body>
+</html>

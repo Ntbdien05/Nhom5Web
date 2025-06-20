@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/dashboard.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/lienHe.css" />
+    <title>Ôn Thi Trắc Nghiệm</title>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="nav-logo">
+        <div class="logo">
+          <img src="/img/ảnhlogo-removebg-preview.png" alt="Logo" />
+        </div>
+      </div>
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Nhập môn học cần tìm..."
+      />
+      <div class="nav-user">
+        <button class="contact-btn" onclick="openPopupLienHe()">Liên hệ</button>
+        <img id="userAvatar" src="/img/avatar-MD.jpg" alt="Avatar" />
+        <div id="userName">Đang tải...</div>
+      </div>
+    </nav>
+
+    <div class="main-content">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sidebar-section">
+          <div class="section-header" onclick="toggleSection('menuSection')">
+            <h3>Danh mục</h3>
+            <span class="arrow">▼</span>
+          </div>
+          <ul id="menuSection" class="section-content">
+            <li><a href="About.html">Giới thiệu</a></li>
+            <li><a href="#" onclick="showAllSubjects()">Tất cả đề thi</a></li>
+            <li>
+              <a href="#" onclick="showFavoriteCards()">Đề thi yêu thích</a>
+            </li>
+            <li><a href="#" onclick="showResults()">Kết quả thi</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="section-header"onclick="toggleSection('personalSection')">
+            <h3>Cá nhân</h3>
+            <span class="arrow">▼</span>
+          </div>
+          <ul id="personalSection" class="section-content">
+            <li><a href="#" id="profile-link">Thông tin cá nhân</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <div id="profile-link" class="popup-overlay" style="display: none">
+        <div class="popup-content">
+          <div>
+            <span class="close-btn" onclick="closeProfilePopup()">×</span>
+            <h2>Thông tin cá nhân</h2>
+            <img id="popup-avatar" src="default-avt.png" alt=""style="width: 100px; border-radius: 50%"/>
+            <p><strong>Họ tên:</strong> <span id="popup-name"></span></p>
+            <p><strong>Email:</strong> <span id="popup-email"></span></p>
+            <p><strong>Giới tính:</strong> <span id="popup-gender"></span></p>
+            <p><strong>Điện thoại:</strong> <span id="popup-phone"></span></p>
+            <p><strong>Ngày sinh:</strong> <span id="popup-dob"></span></p>
+            <p><strong>Vai trò:</strong> <span id="popup-role"></span></p>
+            <div class="popup-buttons">
+              <button onclick="editProfile()">Chỉnh sửa</button>
+              <button onclick="deleteAccount()">Xoá tài khoản</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="editProfilePopup" class="popup-overlay" style="display: none">
+        <div class="popup-content">
+          <div>
+            <span class="close-btn" onclick="closeEditProfilePopup()">×</span>
+            <h2>Chỉnh sửa thông tin</h2>
+            <form id="editProfileForm" onsubmit="submitEditProfile(event)">
+              <label>
+                Họ tên:
+                <input type="text" id="edit-name" name="name" required />
+              </label>
+              <label>
+                Điện thoại:
+                <input type="text" id="edit-phone" name="phone" />
+              </label>
+              <label>
+                Ngày sinh:
+                <input type="date" id="edit-dob" name="dob" />
+              </label>
+              <label>
+                Giới tính:
+                <select id="edit-gender" name="gender">
+                  <option value="Nam">Nam</option>
+                  <option value="Nữ">Nữ</option>
+                  <option value="Khác">Khác</option>
+                </select>
+              </label>
+              <label>
+                Link ảnh đại diện:
+                <input type="text"id="edit-avatar"name="avatar"placeholder="Dán link ảnh..."/>
+              </label>
+              <button type="submit">Lưu thay đổi</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div id="contactPopup" class="modal-overlay" style="display: none">
+        <div class="contact-modal-box">
+          <div class="contact-form-container">
+            <h2>Liên hệ với LearnQuiz</h2>
+            <p class="contact-note">
+              Nếu bạn gặp khó khăn trong quá trình học tập, đăng nhập hoặc sửdụng hệ thống, đừng ngần ngại<strong>liên hệ với chúng tôi</strong> để được hỗ trợ nhanh chóng.
+            </p>
+            <form id="contactForm">
+              <inputtype="text"name="name" placeholder="Họ tên của bạn"required/>
+              <inputtype="email"
+                name="email"
+                placeholder="Email liên hệ"
+                required
+              />
+              <textarea name="message"placeholder="Nội dung liên hệ..." rows="4" required
+              ></textarea>
+              <button type="submit" class="login-btn">Gửi liên hệ</button>
+            </form>
+            <button onclick="closeContactPopup()" class="close-btn">Đóng</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- NỘI DUNG CHÍNH -->
+      <div class="content">
+        <h2 class="section-title" id="subjectTitle">
+          Chọn môn để bắt đầu làm bài
+        </h2>
+        <div class="subject-list" id="subjectCards">
+          <div class="subject-card" data-subject="Toán rời rạc">
+            <div class="subject-image">
+              <img src="/img/toanroirac.png" alt="" />
+            </div>
+            <div class="subject-info">
+              <h3>Toán rời rạc</h3>
+              <button class="btn-start" onclick="startQuiz('Toán rời rạc')">
+                Vào thi
+              </button>
+              <span
+                class="heart-icon"
+                onclick="toggleFavorite(this)"
+                title="Yêu thích"
+                >♡</span
+              >
+            </div>
+          </div>
+
+          <div class="subject-card" data-subject="Pháp luật đại cương">
+            <div class="subject-image">
+              <img src="/img/PLDC.png" alt="" />
+            </div>
+            <div class="subject-info">
+              <h3>Pháp luật đại cương</h3>
+              <button class="btn-start" onclick="startQuiz('Pháp luật đại cương')">
+                Vào thi
+              </button>
+              <span
+                class="heart-icon"
+                onclick="toggleFavorite(this)"
+                title="Yêu thích"
+                >♡</span
+              >
+            </div>
+          </div>
+
+          <div class="subject-card" data-subject="Luật">
+            <div class="subject-image">
+              <img src="/img/luat.png" alt="" />
+            </div>
+            <div class="subject-info">
+              <h3>Luật</h3>
+              <button class="btn-start"onclick="startQuiz('Luật')">Vào thi</button>
+              <span class="heart-icon"onclick="toggleFavorite(this)"title="Yêu thích">♡</span>
+            </div>
+          </div>
+
+          <div class="subject-card" data-subject="Lập trình Wed">
+            <div class="subject-image">
+              <img src="/img/webb.png" alt="" />
+            </div>
+            <div class="subject-info">
+              <h3>Lập trình Wed</h3>
+              <button class="btn-start"onclick="startQuiz('Lập trình Wed')">Vào thi</button>
+              <span class="heart-icon"onclick="toggleFavorite(this)"title="Yêu thích">♡</span>
+            </div>
+          </div>
+
+          <div class="subject-card" data-subject="Anh văn căn bản">
+            <div class="subject-image">
+              <img src="/img/anhvan.png" alt="" />
+            </div>
+            <div class="subject-info">
+              <h3>Anh văn căn bản 1</h3>
+              <button class="btn-start" onclick="startQuiz('Anh văn căn bản')">
+                Vào thi
+              </button>
+              <span class="heart-icon"onclick="toggleFavorite(this)"title="Yêu thích">♡</span>
+            </div>
+          </div>
+
+          <div class="subject-card" data-subject="Mạng máy tính">
+            <div class="subject-image">
+              <img src="/img/mangMT.png" alt="" />
+            </div>
+            <div class="subject-info">
+              <h3>Mạng máy tính</h3>
+              <button
+                class="btn-start"
+                onclick="startQuiz('Mạng máy tính')"
+              >
+                Vào thi
+              </button>
+              <span
+                class="heart-icon"
+                onclick="toggleFavorite(this)"
+                title="Yêu thích"
+                >♡</span
+              >
+            </div>
+          </div>
+
+          <div class="subject-card" data-subject="Anh văn căn bản 2">
+            <div class="subject-image">
+              <img src="/img/avcb2.png" alt="" />
+            </div>
+            <div class="subject-info">
+              <h3>Anh văn căn bản 2</h3>
+              <button
+                class="btn-start"
+                onclick="startQuiz('Anh văn căn bản 2')"
+              >
+                Vào thi
+              </button>
+              <span
+                class="heart-icon"
+                onclick="toggleFavorite(this)"
+                title="Yêu thích"
+                >♡</span
+              >
+            </div>
+          </div>
+
+          <div class="subject-card" data-subject="Kiến trúc máy tính">
+            <div class="subject-image">
+              <img src="/img/kientruc.png" alt="" />
+            </div>
+            <div class="subject-info">
+              <h3>Kiến trúc máy tính</h3>
+              <button
+                class="btn-start"
+                onclick="startQuiz('Kiến trúc máy tính')"
+              >
+                Vào thi
+              </button>
+              <span
+                class="heart-icon"
+                onclick="toggleFavorite(this)"
+                title="Yêu thích"
+                >♡</span
+              >
+            </div>
+          </div>
+
+          <div class="subject-card" data-subject="Cấu trúc dữ liệu">
+            <div class="subject-image">
+              <img src="/img/cautruc.png" alt="" />
+            </div>
+            <div class="subject-info">
+              <h3>Cấu trúc dữ liệu</h3>
+              <button class="btn-start" onclick="startQuiz('Cấu trúc dữ liệu')">
+                Vào thi
+              </button>
+              <span
+                class="heart-icon"
+                onclick="toggleFavorite(this)"
+                title="Yêu thích"
+                >♡</span
+              >
+            </div>
+          </div>
+
+          <div class="subject-card" data-subject="Cơ sỡ dữ liệu">
+            <div class="subject-image">
+              <img src="/img/csdl.png" alt="" />
+            </div>
+            <div class="subject-info">
+              <h3>Cơ sở dữ liệu</h3>
+              <button class="btn-start" onclick="startQuiz('Cơ sỡ dữ liệu')">
+                Vào thi
+              </button>
+              <span
+                class="heart-icon"
+                onclick="toggleFavorite(this)"
+                title="Yêu thích"
+                >♡</span
+              >
+            </div>
+          </div>
+
+          <div class="subject-card" data-subject="CNTT Nâng cao - Word">
+            <div class="subject-image">
+              <img src="/img/tinhocword.png" alt="" />
+            </div>
+            <div class="subject-info">
+              <h3>Tin học nâng cao - Word</h3>
+              <button
+                class="btn-start"
+                onclick="startQuiz('CNTT Nâng cao - Word')"
+              >
+                Vào thi
+              </button>
+              <span
+                class="heart-icon"
+                onclick="toggleFavorite(this)"
+                title="Yêu thích"
+                >♡</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="subject-card"
+            data-subject="Công nghệ chế biến Đường và bánh Kẹo"
+          >
+            <div class="subject-image">
+              <img src="/img/duong-keo.png" alt="" />
+            </div>
+            <div class="subject-info">
+              <h3>Công nghệ chế biến Đường và Kẹo</h3>
+              <button
+                class="btn-start"
+                onclick="startQuiz('Công nghệ chế biến Đường và bánh Kẹo')"
+              >
+                Vào thi
+              </button>
+              <span
+                class="heart-icon"
+                onclick="toggleFavorite(this)"
+                title="Yêu thích"
+                >♡</span
+              >
+            </div>
+          </div>
+        </div>
+        <!-- kết quả thi -->
+        <div id="resultDisplay" class="hidden">
+          <div id="resultList"></div>
+        </div>
+      </div>
+    </div>
+    <div id="footer-container"></div>
+    <script>
+      fetch("footer.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("footer-container").innerHTML = data;
+        });
+
+      fetch("/lienHe.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.body.insertAdjacentHTML("beforeend", html);
+
+          const popup = document.getElementById("popupLienHe");
+          const openBtn = document.querySelector(".contact-btn");
+          const closeBtn = popup?.querySelector(".popup-lienhe-close");
+          const contactForm = popup?.querySelector("#contactForm");
+
+          if (openBtn && popup) {
+            openBtn.addEventListener("click", () => {
+              popup.style.display = "flex";
+            });
+          }
+
+          if (closeBtn && popup) {
+            closeBtn.addEventListener("click", () => {
+              popup.style.display = "none";
+            });
+          }
+
+          if (contactForm) {
+            contactForm.addEventListener("submit", (e) => {
+              e.preventDefault();
+              contactForm.reset();
+              const msg = document.createElement("p");
+              msg.textContent = "✅ Đã gửi liên hệ!";
+              msg.style.color = "green";
+              msg.style.textAlign = "center";
+              contactForm.appendChild(msg);
+              setTimeout(() => {
+                msg.remove();
+                popup.style.display = "none";
+              }, 2000);
+            });
+          }
+        });
+    </script>
+    <script src="/js/Dash.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top phần mềm học tập</title>
+    <link rel="stylesheet" href="/css/footer.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #fff;
+        color: #222;
+        line-height: 1.6;
+      }
+
+      /* ==== NAVBAR ==== */
+      .navbar {
+        position: sticky;
+        top: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #ffffff;
+        padding: 10px 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+      }
+
+      .nav-logo img {
+        height: 40px;
+      }
+
+      .nav-buttons {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .login-btn {
+        background: linear-gradient(90deg, #8b5cf6, #ec4899);
+        border: none;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .login-btn:hover {
+        background: linear-gradient(90deg, #ec4899, #8b5cf6);
+      }
+
+      #userAvatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+      }
+
+      #userName {
+        font-weight: bold;
+      }
+
+      /* Phần nền intro tím full màn hình */
+      .intro-section {
+        background: #e6d9fb;
+        padding: 60px 80px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .intro-text {
+        flex: 1;
+      }
+
+      .intro-tag {
+        display: inline-block;
+        background: linear-gradient(to right, #ec4899, #8b5cf6);
+        color: #fff;
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 20px;
+        margin-bottom: 12px;
+      }
+      .intro-title {
+        font-size: 32px;
+        font-weight: bold;
+        margin: 10px 0;
+      }
+
+      .intro-image {
+        flex: 1;
+        text-align: center;
+      }
+
+      .intro-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .content {
+        max-width: 960px;
+        margin: 40px auto;
+        padding: 0 20px;
+      }
+
+      .content p {
+        margin-bottom: 16px;
+        font-size: 16px;
+      }
+
+      .content h2 {
+        font-size: 22px;
+        margin-top: 40px;
+        color: #1a1a1a;
+      }
+
+      .content h3 {
+        font-size: 18px;
+        margin-top: 40px;
+        color: #1a1a1a;
+      }
+
+      .content img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 20px auto;
+        border-radius: 8px;
+      }
+
+      .content ul {
+        padding-left: 20px;
+      }
+
+      .content a {
+        color: #6200ea;
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .intro-section {
+          padding: 40px 20px;
+        }
+        .intro-title {
+          font-size: 24px;
+        }
+        .content {
+          margin: 20px auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-logo">
+        <img src="/img/ảnhlogo-removebg-preview.png" alt="Logo" />
+      </div>
+      <div class="nav-buttons" id="navUserArea"></div>
+    </nav>
+
+    <section class="intro-section">
+      <div class="intro-text">
+        <span class="intro-tag">Kinh nghiệm ôn thi</span>
+        <h1 class="intro-title">
+          Những cách tập trung học hiệu quả, ghi nhớ kiến thức lâu
+        </h1>
+      </div>
+      <div class="intro-image">
+        <img src="/img/taptrung.png" alt="Top phần mềm học tập" />
+      </div>
+    </section>
+
+    <div class="content">
+      <p>
+        Cách tập trung học là yếu tố quyết định giúp bạn nâng cao hiệu suất và
+        tiết kiệm thời gian. Tuy nhiên, việc duy trì sự tập trung không phải lúc
+        nào cũng dễ dàng, đặc biệt khi bạn đối mặt với xao nhãng từ môi trường
+        và thói quen cá nhân. Trong bài viết này, <strong>LearnQuiz</strong> sẽ
+        cùng bạn tìm hiểu nhữngcách tập trung học hiệu quả dành cho học sinh,
+        sinh viên.
+      </p>
+
+      <h3>Mục Lục</h3>
+      <ul>
+        <li><a href="#1">1. Nguyên nhân gây mất tập trung</a></li>
+        <ul>
+          <li><a href="#1.1">1.1. Mất tập trung vì chán</a></li>
+          <li><a href="#1.2">1.2. Mất tập trung vì mệt</a></li>
+          <li><a href="#1.3">1.3. Mất tập trung vì bận rộn</a></li>
+        </ul>
+        <li><a href="#2">2. Các nguyên tắc để tập trung học hiệu quả</a></li>
+        <ul>
+          <li><a href="#2.1">2.1. Nguyên tắc 1: Lên kế hoạch học tập</a></li>
+          <li>
+            <a href="#2.2"
+              >2.2. Nguyên tắc 2: Xác định ưu tiên trong việc học tập</a
+            >
+          </li>
+          <li>
+            <a href="#2.3"
+              >2.2. Nguyên tắc 2: Xác định ưu tiên trong việc học tập</a
+            >
+          </li>
+          <li>
+            <a href="#2.4">2.4. Nguyên tắc 4: Loại bỏ các yếu tố phân tâm</a>
+          </li>
+        </ul>
+        <li><a href="#3">3. Các cách tập trung học hiệu quả</a></li>
+        <ul>
+          <li><a href="#3.1">3.1. Thay đổi phương pháp học</a></li>
+          <li><a href="#3.2">3.2. Áp dụng phương pháp Pomodoro</a></li>
+          <li><a href="#3.3">3.3. Học nhóm để tăng hiệu quả</a></li>
+          <li><a href="#3.4">3.4. Sử dụng sơ đồ tư duy</a></li>
+          <li><a href="#3.5">3.5. Tránh xa các yếu tố gây phân tâm</a></li>
+          <li><a href="#3.6">3.6. Học một cách chủ động</a></li>
+          <li><a href="#3.7">3.7. Nghỉ giải lao hợp lý</a></li>
+          <li><a href="#3.8">3.8. Sinh hoạt điều độ</a></li>
+        </ul>
+      </ul>
+
+      <h2 id="1">1. Nguyên nhân gây mất tập trung</h2>
+      <p>
+        Mất tập trung khi học là một vấn đề phổ biến mà nhiều người gặp phải,
+        đặc biệt trong những lúc cần hoàn thành công việc quan trọng. Có nhiều
+        nguyên nhân dẫn đến tình trạng này, từ môi trường bên ngoài đến yếu tố
+        tâm lý và thói quen cá nhân. Trong số đó, cảm giác chán nản là một trong
+        những lý do lớn nhất làm giảm khả năng duy trì sự chú ý.
+      </p>
+      <h3 id="1.1">1.1. Mất tập trung vì chán</h3>
+      <p>
+        Khi bài vở quá nhiều, học sinh thường có cảm giác chán nản và muốn bỏ
+        cuộc, không thể tập trung cho việc học. Ngoài ra, khi môn học không gây
+        hứng thú hoặc không liên quan đến sở thích của mình, bạn cũng sẽ không
+        tìm được cảm hứng để học bài một cách hiệu quả.
+      </p>
+      <img src="/img/chan-nan.jpg" alt="" />
+      <p style="text-align: center; font-weight: bold; margin-top: 8px">
+        Học sinh chán nản không thể tập trung học hiệu quả
+      </p>
+      <h3 id="1.2">1.2. Mất tập trung vì mệt</h3>
+      <p>
+        Quá trình học tập đòi hỏi sự hoạt động và nỗ lực liên tục và khiến học
+        sinh cảm thấy mệt mỏi, khả năng tập trung. Có nhiều yếu tố tạo nên sự
+        mệt mỏi của học sinh cụ thể như: áp lực từ nhiều bài tập, dự án và các
+        kỳ thi liên tục trong một thời gian dài. Ngoài ra, khi học sinh bị ốm,
+        bị sốt cũng làm giảm đi năng suất trong việc học bài.
+      </p>
+      <h3 id="1.3">1.3. Mất tập trung vì bận rộn</h3>
+      <p>
+        Khi bạn đang ngồi học nhưng còn quá nhiều công việc bận rộn khác thì đôi
+        khi chúng ta không thể tập trung hoàn toàn với bài vở. Ví dụ như sinh
+        thường dành thời gian để tham gia câu lạc, bộ, đi làm thêm,… nên giảm
+        bớt sự tập trung vào học tập. Điều này đòi hỏi bạn cần có ý chí kiên
+        định và sắp xếp các công việc phù hợp để không làm ảnh hưởng đến nhau.
+      </p>
+
+      <h2 id="2">2. Các nguyên tắc để tập trung học hiệu quả</h2>
+      <p>
+        Để đạt hiệu quả cao trong học tập, việc duy trì sự tập trung đóng vai
+        trò rất quan trọng. Dưới đây là những nguyên tắc cơ bản giúp bạn tập
+        trung và nâng cao hiệu suất học tập
+      </p>
+      <h3 id="2.1">2.1. Nguyên tắc 1: Lên kế hoạch học tập</h3>
+      <p>
+        Việc lên kế hoạch học tập cụ thể chi tiết là nguyên tắc quan trọng giúp
+        bạn tập trung vào việc học hiệu quả hơn. Kế hoạch sẽ giúp bạn xác định
+        mục tiêu, thời gian, các hoạt động cụ thể để dễ dàng quản lý.
+      </p>
+      <img src="/img/Ke-hoach.jpg" alt="" />
+      <p style="text-align: center; font-weight: bold; margin-top: 8px">
+        Lên kế hoạch học tập phù hợp hiệu quả
+      </p>
+      <p>
+        Bạn có thể chia thành nhiều mục tiêu nhỏ và chia đều công việc theo từng
+        ngày để không bị quá áp lực với khối lượng bài vở. Nhờ đó, chúng ta cũng
+        tiện theo dõi và đánh giá quá trình học tập về sự tiến bộ và đảm bảo
+        hướng đến mục tiêu cuối cùng.
+      </p>
+      <h3 id="2.2">2.2. Nguyên tắc 2: Xác định ưu tiên trong việc học tập</h3>
+      <p>
+        Trong việc học, bạn cũng nên sắp xếp các thứ tự ưu tiên ví dụ môn nào
+        quan trọng, môn nào sắp thi để lên kế hoạch học tập phù hợp. Chúng ta
+        không nên học bài tuỳ hứng để rồi không hoàn thành bất cứ công việc cụ
+        thể nào.
+      </p>
+      <h3 id="2.3">2.3. Nguyên tắc 3: Đưa ra mục tiêu cụ thể và rõ ràng</h3>
+      <p>
+        Việc xác định mục tiêu là một cách tập trung học khá phổ biến. Bạn cần
+        hiểu rõ mình muốn gì, mình cần làm gì, làm như thế nào,… để có thể xác
+        định mục tiêu phù hợp. Tuy nhiên, mục tiêu đề ra cần phù hợp với năng
+        lực cá nhân có thể làm được để cố gắng và đạt được thành tích tốt.
+      </p>
+
+      <h3 id="2.4">2.4. Nguyên tắc 4: Loại bỏ các yếu tố phân tâm</h3>
+      <p>
+        Để biết cách tập trung học, bạn cần loại bỏ hoàn toàn các yếu tố phân
+        tâm bên ngoài thì mới mang lại kết quả tốt. Các yếu tố gây phân tâm có
+        thể bao gồm: âm thanh, điện thoại, không gian,…
+      </p>
+      <p>
+        Trước tiên bạn cần lựa chọn không gian học tập phù hợp tránh tiếng ồn và
+        tránh bị làm phiền. Tiếp đó, chúng ta sẽ tắt toàn bộ các thiết bị điện
+        thoại xung quanh để tập trung hoàn toàn vào việc học
+      </p>
+
+      <h2 id="3">3. Các cách tập trung học hiệu quả</h2>
+      <p>
+        Khi việc học trở nên khó khăn hoặc nhàm chán, thay đổi cách tập trung
+        học là một phương pháp hiệu quả để duy trì sự tập trung và cải thiện kết
+        quả học tập. Việc sử dụng những phương pháp mới mẻ không chỉ giúp bạn
+        cảm thấy hứng thú hơn mà còn khai thác tối đa khả năng tiếp thu kiến
+        thức.
+      </p>
+      <h3 id="3.1">3.1. Thay đổi phương pháp học</h3>
+      <p>
+        Cách tập trung học hiệu quả bắt đầu từ việc thay đổi và lựa chọn phương
+        pháp học phù hợp. Thay vì học thuộc lòng, hãy áp dụng các phương pháp
+        học chủ động như ghi chú tư duy, sơ đồ tư duy, hoặc học qua hình ảnh, âm
+        thanh để tăng hứng thú và cải thiện khả năng ghi nhớ.
+      </p>
+
+      <h3 id="3.2">3.2. Áp dụng phương pháp Pomodoro</h3>
+      <p>
+        Phương pháp Pomodoro là một kỹ thuật quản lý thời gian và tăng năng suất
+        bằng cách chia thời gian làm việc thành các đợt ngắn và tập trung hoàn
+        toàn. Sau đó, bạn sẽ được nghỉ ngơi trong một khoảng thời gian nhỏ và
+        tiếp tục lại vòng lặp như vậy. Đây là một cách tập trung học có cấu trúc
+        để giúp bạn tận dụng thời gian và tránh sự phân tâm trong quá trình học
+        bài.
+      </p>
+      <img src="/img/pomo.png" alt="" />
+      <p style="text-align: center; font-weight: bold; margin-top: 8px">
+        Áp dụng phương pháp Pomodoro để nâng cao hiệu quả học tập
+      </p>
+      <h3 id="3.3">3.3. Học nhóm để tăng hiệu quả</h3>
+      <p>
+        Học nhóm là một cách tập trung học hiệu quả giúp bạn tập trung và nỗ lực
+        học bài hơn. Việc trao đổi các kiến thức, thông tin với nhau khi học sẽ
+        giúp bạn hiểu bài và tăng khả năng ghi nhớ.
+      </p>
+      <p>
+        Mỗi nhóm chỉ nên có từ 3 – 5 thành viên để đảm bảo sự tương tác là tốt
+        nhất. Trước khi hoạt động nhóm, chúng ta cũng nên thống nhất mục tiêu
+        chung cùng các thành viên như: tập trung học bài, tích cực trao đổi,
+        tránh nói chuyện xung quanh làm phân tâm,…
+      </p>
+
+      <h3 id="3.4">3.4. Sử dụng sơ đồ tư duy</h3>
+      <p>
+        Sơ đồ tư duy là một cách tập trung học hiệu quả, giúp bạn ôn bài khoa
+        học mà không cần học thuộc quá nhiều con chữ. Với phương pháp này, chúng
+        ta sẽ sử dụng sơ đồ hình nhánh cây để vạch ra các ý chính trong bài học.
+      </p>
+      <p>
+        Thông qua việc sử dụng nét đậm nhạt, hình vẽ, màu sắc, bạn sẽ dễ dàng
+        ghi nhớ và nắm được tổng quan kiến thức cần học.
+      </p>
+
+      <img src="/img/mindMap.jpg" alt="" />
+      <p style="text-align: center; font-weight: bold; margin-top: 8px">
+        Sơ đồ tư duy là cách tập trung học sáng tạo và tăng khả năng ghi nhớ
+      </p>
+
+      <h3 id="3.5">3.5. Tránh xa các yếu tố gây phân tâm</h3>
+      <p>
+        Tránh xa các yếu tố phân tâm là cách tập trung học vô cùng hiệu quả,
+        giúp bạn không suy nghĩ đến những hoạt động khác xung quanh. Trong quá
+        trình học, bạn nên hạn chế sử dụng các thiết bị điện tử, tránh những nơi
+        ồn ào và chuẩn bị cho mình không gian học tập lý tưởng nhất.
+      </p>
+
+      <h3 id="3.6">3.6. Học một cách chủ động</h3>
+      <p>
+        Bạn đừng coi việc học như một việc bắt buộc phải làm mà hãy chủ động
+        thực hiện như một thói quen trong ngày. Học chủ động đòi hỏi sự tổ chức
+        và quản lý thời gian tốt để phân chia các nội dung hiệu quả.
+      </p>
+      <p>
+        Bạn cần xác định mục tiêu học cụ thể, lập kế hoạch và ưu tiên công việc.
+        Điều này giúp bạn tập trung vào những gì quan trọng nhất và tránh lãng
+        phí thời gian vào những hoạt động không mang lại giá trị.
+      </p>
+
+      <h3 id="3.7">3.7. Nghỉ giải lao hợp lý</h3>
+      <p>
+        Để việc học tập hiệu quả, chúng cần kết hợp với nghỉ giải lao hợp lý để
+        tránh cảm giác mệt mỏi. Khi bạn cung cấp cho bản thân những khoảng thời
+        gian nghỉ ngơi đúng đắn, bạn có thể tăng cường sự tập trung, cải thiện
+        khả năng tiếp thu thông tin và duy trì năng lượng trong suốt quá trình
+        học
+      </p>
+      <h3 id="3.8">3.8. Sinh hoạt điều độ</h3>
+      <p>
+        Sinh hoạt điều độ cũng là một cách tập trung học hiệu quả. Để đạt được
+        điều đó, bạn nên duy trì chế độ ăn uống đầy đủ dinh dưỡng với các thực
+        phẩm tốt cho mắt, tư duy và trí nhớ. Bên cạnh đó, việc tập thể dục thể
+        thao thường xuyên không chỉ giúp giảm căng thẳng, cải thiện tâm trạng và
+        giấc ngủ mà còn nâng cao hiệu suất học tập, giúp bạn tỉnh táo và tiếp
+        thu kiến thức hiệu quả hơn.
+      </p>
+    </div>
+    <div id="footer-container"></div>
+    <script>
+      fetch("footer.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("footer-container").innerHTML = data;
+        });
+
+      fetch("/api/user", { credentials: "include" })
+        .then((res) => res.json())
+        .then((data) => {
+          const nav = document.getElementById("navUserArea");
+          if (!nav) return;
+
+          if (data && data.name) {
+            nav.innerHTML = `
+              <img id="userAvatar" src="${
+                data.avatar || "/img/default-avt.png"
+              }" alt="Avatar" />
+              <span id="userName">${data.name}</span>
+            `;
+          } else {
+            nav.innerHTML = `<button class="login-btn" onclick="window.location.href='/about.html'">Đăng nhập</button>`;
+          }
+        })
+        .catch(() => {
+          const nav = document.getElementById("navUserArea");
+          if (nav) {
+            nav.innerHTML = `<button class="login-btn" onclick="window.location.href='/about.html'">Đăng nhập</button>`;
+          }
+        });
+    </script>
+  </body>
+</html>

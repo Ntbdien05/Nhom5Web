@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top phần mềm học tập</title>
+    <link rel="stylesheet" href="/css/footer.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #fff;
+        color: #222;
+        line-height: 1.6;
+      }
+
+      /* ==== NAVBAR ==== */
+      .navbar {
+        position: sticky;
+        top: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #ffffff;
+        padding: 10px 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+      }
+
+      .nav-logo img {
+        height: 40px;
+      }
+
+      .nav-buttons {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .login-btn {
+        background: linear-gradient(90deg, #8b5cf6, #ec4899);
+        border: none;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .login-btn:hover {
+        background: linear-gradient(90deg, #ec4899, #8b5cf6);
+      }
+
+      #userAvatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+      }
+
+      #userName {
+        font-weight: bold;
+      }
+
+      /* Phần nền intro tím full màn hình */
+      .intro-section {
+        background: #e6d9fb;
+        padding: 60px 80px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .intro-text {
+        flex: 1;
+      }
+
+      .intro-tag {
+        display: inline-block;
+        background: linear-gradient(to right, #ec4899, #8b5cf6);
+        color: #fff;
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 20px;
+        margin-bottom: 12px;
+      }
+      .intro-title {
+        font-size: 32px;
+        font-weight: bold;
+        margin: 10px 0;
+      }
+
+      .intro-image {
+        flex: 1;
+        text-align: center;
+      }
+
+      .intro-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      /* Nội dung chính: thụt vào, giống kiểu blog */
+      .content {
+        max-width: 960px;
+        margin: 40px auto;
+        padding: 0 20px;
+      }
+
+      .content p {
+        margin-bottom: 16px;
+        font-size: 16px;
+      }
+
+      .content h2 {
+        font-size: 22px;
+        margin-top: 40px;
+        color: #1a1a1a;
+      }
+
+      .content img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 20px auto;
+        border-radius: 8px;
+      }
+
+      .content ul {
+        padding-left: 20px;
+      }
+
+      .content a {
+        color: #6200ea;
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .intro-section {
+          padding: 40px 20px;
+        }
+        .intro-title {
+          font-size: 24px;
+        }
+        .content {
+          margin: 20px auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-logo">
+        <img src="/img/ảnhlogo-removebg-preview.png" alt="Logo" />
+      </div>
+      <div class="nav-buttons" id="navUserArea"></div>
+    </nav>
+
+    <section class="intro-section">
+      <div class="intro-text">
+        <span class="intro-tag">Công cụ học tập</span>
+        <h1 class="intro-title">
+          Top 6 phần mềm làm bài tập tiếng Anh hiệu quả nhất hiện nay
+        </h1>
+      </div>
+      <div class="intro-image">
+        <img src="/img/phanmemAV.png" alt="Top phần mềm học tập" />
+      </div>
+    </section>
+
+    <div class="content">
+      <p>
+        <strong><em>Phần mềm làm bài tập tiếng Anh</em></strong> là trợ thủ đắc
+        lực giúp bạn cải thiện kỹ năng ngữ pháp, từ vựng và khả năng giao tiếp
+        tiếng Anh một cách nhanh chóng. Với sự hỗ trợ từ các ứng dụng này, việc
+        học tiếng Anh trở nên dễ dàng và thú vị hơn bao giờ hết. Cùng EduQuiz
+        khám phá top 6 phần mềm tốt nhất để tối ưu hóa quá trình học tập của bạn
+        ngay hôm nay!
+      </p>
+
+      <h3>Mục Lục</h3>
+      <ul>
+        <li><a href="#eduquiz">1. EduQuiz – Phần mềm học tập hiệu quả</a></li>
+        <li><a href="#Duo">2. Zoom</a></li>
+        <li><a href="#Grammarly">3. Google Classroom</a></li>
+        <li><a href="#Cake">4. Khan Academy</a></li>
+        <li><a href="#Memrise">5. Microsoft OneNote</a></li>
+        <li><a href="#Elsa Speak">6. VioEdu</a></li>
+      </ul>
+
+      <h2 id="eduquiz">1. EduQuiz – Phần mềm làm bài tập tiếng Anh hiệu quả</h2>
+      <p>
+        EduQuiz là một trong những nền tảng thi trắc nghiệm tiếng Anh trực tuyến
+        được nhiều người tin dùng hiện nay. Với kho đề thi khổng lồ, đa dạng về
+        chủ đề và cấp độ, EduQuiz giúp người học rèn luyện và đánh giá năng lực
+        tiếng Anh một cách hiệu quả.
+      </p>
+      <img src="/img/edu-AV.jpg" alt="EduQuiz" />
+      <p style="text-align: center; font-weight: bold; margin-top: 8px">
+        EduQuiz – Nền tảng thi trắc nghiệm online
+      </p>
+      <p>
+        <strong>EduQuiz sở hữu nhiều ưu điểm nổi bật như:</strong>
+      </p>
+      <ul>
+        <li>
+          Kho đề thi phong phú: EduQuiz cung cấp kho đề thi tiếng Anh phong phú,
+          đa dạng từ các đề ôn thi cơ bản đến các dạng bài thi nâng cao như
+          IELTS, TOEFL… Ngoài ra, EduQuiz còn có các bộ đề ôn thi THPTQG môn
+          tiếng Anh các năm dành cho các bạn học sinh ôn thi Đại học.
+        </li>
+        <li>
+          Tạo đề thi dễ dàng: Ngoài thi thử các đề tiếng Anh có sẵn, EduQuiz còn
+          cho phép người dùng tự tạo đề thi một cách nhanh chóng và dễ dàng.
+          EduQuiz có 3 cách tạo đề cực nhanh bằng AI, văn bản có sẵn hoặc trình
+          soạn thảo…
+        </li>
+        <li>
+          Nhiều chế độ ôn thi hiệu quả: Bạn có thể lựa chọn nhiều chế độ ôn thi
+          như Tổng ôn kiến thức, Thi thử, hoặc Học với Flashcard – một phương
+          pháp học từ vựng tiếng Anh hiệu quả.
+        </li>
+        <li>
+          hống kê kết quả chi tiết: Sau khi làm bài tập tiếng Anh trên EduQuiz,
+          bạn sẽ nhận được kết quả chi tiết. Bao gồm số câu đúng, sai, thời gian
+          làm bài, giúp bạn đánh giá toàn diện mức độ nắm vững kiến thức của
+          mình.
+        </li>
+
+        <li>
+          <strong>Giao diện thân thiện với người dùng:</strong> EduQuiz có giao
+          diện trực quan và dễ sử dụng đối với người dùng mới bắt đầu làm quen
+          với nền tảng.
+        </li>
+      </ul>
+      <p>
+        Hiện nay, EduQuiz là nền tảng thi trắc nghiệm online hàng đầu được nhiều
+        bạn học sinh, sinh viên lựa chọn. Phần mềm làm bài tập tiếng Anh này sở
+        hữu nhiều tính năng vượt trội, giúp người dùng ôn tập hiệu quả và nhanh
+        chóng đạt đến trình độ tiếng Anh như mong đợi.
+      </p>
+
+      <!-- Thêm các mục khác tương tự -->
+      <h2 id="Duo">2. Duolingo</h2>
+      <p>
+        Duolingo là một phần mềm học tiếng Anh nổi tiếng, được thiết kế đặc biệt
+        để hỗ trợ người mới bắt đầu và những ai muốn ôn luyện từ vựng một cách
+        dễ dàng.
+      </p>
+      <img src="/img/Dou.jpg" alt="Dou" />
+      <p style="text-align: center; font-weight: bold; margin-top: 8px">
+        Duolingo – Bước khởi đầu hoàn hảo cho hành trình chinh phục tiếng Anh
+      </p>
+      <strong><p>Ưu điểm nổi bật:</p></strong>
+      <ul>
+        <li>Phù hợp với mọi đối tượng người học.</li>
+        <li>
+          ĐGiao diện thân thiện, dễ sử dụng, tạo cảm giác thoải mái khi học tập.
+        </li>
+        <li>
+          Bài học ngắn gọn, tích hợp trò chơi giúp tăng hứng thú học tập và duy
+          trì động lực lâu dài.
+        </li>
+      </ul>
+      <strong><p>Ưu điểm nổi bật:</p></strong>
+      <ul>
+        <li>
+          Nội dung ngữ pháp không quá chuyên sâu, chủ yếu tập trung vào từ vựng
+          và mẫu câu cơ bản.
+        </li>
+      </ul>
+      <p>
+        Duolingo phù hợp cho những ai muốn bắt đầu học tiếng Anh hoặc luyện tập
+        từ vựng hàng ngày một cách nhẹ nhàng và hiệu quả. Đây là một lựa chọn lý
+        tưởng cho việc học tập giải trí nhưng vẫn mang lại kết quả.
+      </p>
+
+      <h2 id="Grammarly">3. Grammarly</h2>
+      <p>
+        Grammarly là phần mềm nổi bật trong việc hỗ trợ kiểm tra ngữ pháp và cải
+        thiện kỹ năng viết tiếng Anh, đặc biệt phù hợp cho học sinh, sinh viên,
+        và người đi làm cần viết bài chuyên nghiệp.
+      </p>
+      <img src="/img/Grammarly.png" alt="Grammarly" />
+      <p style="text-align: center; font-weight: bold; margin-top: 8px">
+        Grammarly – Trợ lý đắc lực cho những bài viết hoàn hảo
+      </p>
+      <p>Ưu điểm nổi bật:</p>
+      <ul>
+        <li>
+          Phân tích chi tiết lỗi sai trong ngữ pháp, chính tả, cách dùng từ và
+          cấu trúc câu.
+        </li>
+        <li>
+          Gợi ý cách sửa lỗi một cách chuyên nghiệp và dễ hiểu, giúp cải thiện
+          kỹ năng viết nhanh chóng.
+        </li>
+        <li>
+          Giao diện trực quan, dễ sử dụng, tích hợp với trình duyệt và các công
+          cụ viết khác như Google Docs, Word.
+        </li>
+      </ul>
+      <strong><p>Điểm hạn chế:</p></strong>
+      <ul>
+        <li>
+          Một số tính năng nâng cao như kiểm tra phong cách viết, tông giọng,
+          hoặc từ vựng nâng cao chỉ có sẵn trong bản trả phí.
+        </li>
+      </ul>
+      <p>
+        Grammarly là lựa chọn tuyệt vời cho những ai muốn cải thiện khả năng
+        viết một cách toàn diện. Bạn có thể kết hợp với các công cụ học tập khác
+        để phát triển đồng đều các kỹ năng còn lại để đạt được hiệu quả học tập
+        tốt nhất.
+      </p>
+
+      <h2 id="Cake">4. Cake</h2>
+      <p>
+        Cake là một phần mềm làm bài tập tiếng Anh tập trung vào việc rèn luyện
+        kỹ năng nghe và nói. Với kho video đa dạng, được cắt ghép từ các đoạn
+        hội thoại thực tế, Cake giúp người học làm quen với cách giao tiếp tiếng
+        Anh tự nhiên.
+      </p>
+      <img src="/img/Cakae.png" alt="" />
+      <p style="text-align: center; font-weight: bold; margin-top: 8px">
+        Cake – Nâng cao kỹ năng giao tiếp tiếng Anh tự nhiên
+      </p>
+      <strong><p>Ưu điểm nổi bật:</p></strong>
+      <ul>
+        <li>
+          Sử dụng các video thực tế từ phim, chương trình truyền hình, và hội
+          thoại đời thường, giúp người học làm quen với ngữ cảnh giao tiếp thật.
+        </li>
+        <li>
+          Tích hợp công nghệ AI để luyện nói, cung cấp phản hồi chính xác về
+          phát âm và cách biểu đạt.
+        </li>
+      </ul>
+      <strong><p>Điểm hạn chế:</p></strong>
+      <ul>
+        <li>
+          Chưa có hệ thống bài tập ngữ pháp chi tiết, do đó không phù hợp nếu
+          bạn muốn nâng cao kỹ năng ngữ pháp một cách bài bản.
+        </li>
+      </ul>
+
+      <h2 id="Memrise">5. Memrise</h2>
+      <p>
+        Memrise là một ứng dụng học ngôn ngữ nổi tiếng, được nhiều người yêu
+        thích bởi cách học từ vựng độc đáo và thú vị. Thay vì chỉ đơn thuần học
+        thuộc từ vựng, Memrise kết hợp hình ảnh, âm thanh và các trò chơi để
+        giúp người học ghi nhớ từ một cách lâu dài.
+      </p>
+      <img src="/img/mem.jpg" alt="" />
+      <p style="text-align: center; font-weight: bold; margin-top: 8px">
+        Memrise – Học từ vựng hiệu quả với phương pháp độc đáo
+      </p>
+      <strong><p>Ưu điểm nổi bật:</p></strong>
+      <ul>
+        <li>
+          Sử dụng flashcard và video minh họa, giúp từ vựng dễ nhớ và áp dụng
+          nhanh hơn vào thực tế.
+        </li>
+        <li>
+          Tích hợp các đoạn video từ người bản xứ, giúp bạn nắm bắt cách phát âm
+          chuẩn và sử dụng từ ngữ trong ngữ cảnh sống động.
+        </li>
+      </ul>
+      <strong><p>Điểm hạn chế:</p></strong>
+      <ul>
+        <li>
+          Phần bài tập chưa đa dạng, chủ yếu tập trung vào từ vựng, chưa hỗ trợ
+          nhiều kỹ năng như ngữ pháp hay viết.
+        </li>
+      </ul>
+
+      <h2 id="Elsa Speak">6. Elsa Speak</h2>
+      <p>
+        Elsa Speak là một phần mềm làm bài tập tiếng Anh tập trung vào việc cải
+        thiện kỹ năng phát âm. Với công nghệ trí tuệ nhân tạo (AI) tiên tiến,
+        Elsa Speak có khả năng đánh giá chính xác từng âm tiết trong bài nói của
+        bạn và đưa ra những gợi ý sửa lỗi chi tiết.
+      </p>
+      <img src="/img/elsa.jpg" alt="" />
+      <p style="text-align: center; font-weight: bold; margin-top: 8px">
+        Elsa Speak – Huấn luyện viên phát âm tiếng Anh AI cá nhân
+      </p>
+      <strong><p>Ưu điểm nổi bật:</p></strong>
+      <ul>
+        <li>
+          Sử dụng công nghệ AI tiên tiến để phân tích và kiểm tra phát âm, giúp
+          người học nhận biết lỗi sai và cải thiện cách phát âm một cách chính
+          xác.
+        </li>
+        <li>
+          Hệ thống bài tập giao tiếp đa dạng, mô phỏng các tình huống thực tế,
+          giúp bạn tự tin hơn khi nói chuyện bằng tiếng Anh.
+        </li>
+      </ul>
+      <strong><p>Điểm hạn chế:</p></strong>
+      <ul>
+        <li>
+          Không có bài tập ngữ pháp, do đó cần kết hợp Elsa Speak với các phần
+          mềm khác để phát triển toàn diện các kỹ năng.
+        </li>
+      </ul>
+      
+    </div>
+    <div id="footer-container"></div>
+    <script>
+      fetch("footer.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("footer-container").innerHTML = data;
+        });
+
+      fetch("/api/user", { credentials: "include" })
+        .then((res) => res.json())
+        .then((data) => {
+          const nav = document.getElementById("navUserArea");
+          if (!nav) return;
+
+          if (data && data.name) {
+            nav.innerHTML = `
+              <img id="userAvatar" src="${
+                data.avatar || "/img/default-avt.png"
+              }" alt="Avatar" />
+              <span id="userName">${data.name}</span>
+            `;
+          } else {
+            nav.innerHTML = `<button class="login-btn" onclick="window.location.href='/about.html'">Đăng nhập</button>`;
+          }
+        })
+        .catch(() => {
+          const nav = document.getElementById("navUserArea");
+          if (nav) {
+            nav.innerHTML = `<button class="login-btn" onclick="window.location.href='/about.html'">Đăng nhập</button>`;
+          }
+        });
+    </script>
+  </body>
+</html>

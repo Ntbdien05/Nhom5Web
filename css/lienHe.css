@@ -1,0 +1,95 @@
+.contact-btn {
+  background: linear-gradient(90deg, #8b5cf6, #ec4899);
+  border: none;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-btn:hover {
+  background: linear-gradient(90deg, #ec4899, #8b5cf6);
+}
+
+.popup-lienhe-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-lienhe-box {
+  background: #fff;
+  border-radius: 12px;
+  width: 520px;
+  max-width: 95%;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.popup-lienhe-content h2 {
+  font-size: 22px;
+  color: #8b5cf6;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.popup-lienhe-note {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 18px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+#contactForm input,
+#contactForm textarea {
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: none;
+}
+
+.popup-lienhe-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.popup-lienhe-btn,
+.popup-lienhe-close {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.popup-lienhe-btn {
+  background: linear-gradient(90deg, #8b5cf6, #ec4899);
+  color: white;
+}
+
+.popup-lienhe-btn:hover {
+  background: linear-gradient(90deg, #ec4899, #8b5cf6);
+}
+
+.popup-lienhe-close {
+  background: #ccc;
+  color: #000;
+}
+
+.popup-lienhe-close:hover {
+  background: #bbb;
+}

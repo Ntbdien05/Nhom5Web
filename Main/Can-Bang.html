@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top phần mềm học tập</title>
+    <link rel="stylesheet" href="/css/footer.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #fff;
+        color: #222;
+        line-height: 1.6;
+      }
+
+      /* ==== NAVBAR ==== */
+      .navbar {
+        position: sticky;
+        top: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #ffffff;
+        padding: 10px 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+      }
+
+      .nav-logo img {
+        height: 40px;
+      }
+
+      .nav-buttons {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .login-btn {
+        background: linear-gradient(90deg, #8b5cf6, #ec4899);
+        border: none;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .login-btn:hover {
+        background: linear-gradient(90deg, #ec4899, #8b5cf6);
+      }
+
+      #userAvatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+      }
+
+      #userName {
+        font-weight: bold;
+      }
+
+      /* Phần nền intro tím full màn hình */
+      .intro-section {
+        background: #e6d9fb;
+        padding: 60px 80px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .intro-text {
+        flex: 1;
+      }
+
+      .intro-tag {
+        display: inline-block;
+        background: linear-gradient(to right, #ec4899, #8b5cf6);
+        color: #fff;
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 20px;
+        margin-bottom: 12px;
+      }
+      .intro-title {
+        font-size: 32px;
+        font-weight: bold;
+        margin: 10px 0;
+      }
+
+      .intro-image {
+        flex: 1;
+        text-align: center;
+      }
+
+      .intro-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .content {
+        max-width: 960px;
+        margin: 40px auto;
+        padding: 0 20px;
+      }
+
+      .content p {
+        margin-bottom: 16px;
+        font-size: 16px;
+      }
+
+      .content h2 {
+        font-size: 22px;
+        margin-top: 40px;
+        color: #1a1a1a;
+      }
+
+      .content h3 {
+        font-size: 18px;
+        margin-top: 40px;
+        color: #1a1a1a;
+      }
+
+      .content img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 20px auto;
+        border-radius: 8px;
+      }
+
+      .content ul {
+        padding-left: 20px;
+      }
+
+      .content a {
+        color: #6200ea;
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .intro-section {
+          padding: 40px 20px;
+        }
+        .intro-title {
+          font-size: 24px;
+        }
+        .content {
+          margin: 20px auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-logo">
+        <img src="/img/ảnhlogo-removebg-preview.png" alt="Logo" />
+      </div>
+      <div class="nav-buttons" id="navUserArea"></div>
+    </nav>
+
+    <section class="intro-section">
+      <div class="intro-text">
+        <span class="intro-tag">Kinh nghiệm ôn thi</span>
+        <h1 class="intro-title">
+          Cân bằng giữa học tập và giải trí: Cách quản lý thời gian hiệu quả cho
+          học sinh
+        </h1>
+      </div>
+      <div class="intro-image">
+        <img src="/img/time.png" alt="Top phần mềm học tập" />
+      </div>
+    </section>
+
+    <div class="content">
+      <p>
+        Bạn luôn cảm thấy mệt mỏi, căng thẳng vì không hoàn thành được hết công
+        việc? Vấn đề có thể nằm ở việc bạn chưa biết cách quản lý thời gian hiệu
+        quả. Hãy cùng <strong>LearnQuiz</strong> tìm hiểu những bí quyết để cân
+        bằng giữa học tập và giải trí, giúp bạn cân bằng thời gian và học tập
+        một cách hiệu quả nhất!
+      </p>
+
+      <h3>Mục Lục</h3>
+      <ul>
+        <li><a href="#1">1. Tầm quan trọng của quản lý thời gian</a></li>
+        <li>
+          <a href="#2"
+            >2. Tại sao học sinh cần cân bằng giữa học tập và giải trí?</a
+          >
+        </li>
+        <ul>
+          <li><a href="#2.1">2.1. Học tập</a></li>
+          <li>
+            <a href="#2.2">2.2. Giải trí</a>
+          </li>
+        </ul>
+        <li><a href="#3">3. Nguyên nhân dẫn đến việc mất cân bằng</a></li>
+        <ul>
+          <li><a href="#3.1">3.1. Áp lực học tập</a></li>
+          <li><a href="#3.2">3.2. Sự hấp dẫn của các thiết bị điện tử</a></li>
+          <li>
+            <a href="#3.3">3.3. Chưa biết cách quản lý thời gian hiệu quả</a>
+          </li>
+        </ul>
+        <li><a href="#4">4. Những cách quản lý thời gian hiệu quả</a></li>
+        <ul>
+          <li><a href="#4.1">4.1. Lập kế hoạch hàng ngày/tuần</a></li>
+          <li>
+            <a href="#4.2">4.2. Sử dụng công cụ hỗ trợ quản lý thời gian</a>
+          </li>
+          <li><a href="#4.3">4.3. Áp dụng kỹ thuật Pomodoro</a></li>
+          <li><a href="#4.4">4.4. Hạn chế sự xao lãng</a></li>
+          <li><a href="#4.5">4.5. Sử dụng thời gian chờ đợi</a></li>
+          <li><a href="#4.6">4.6. Học cách nói “không”</a></li>
+          <li><a href="#4.7">4.7. Giữ sự linh hoạt trong kế hoạch</a></li>
+          <li><a href="#4.8">4.8. Thư giãn và nghỉ ngơi đầy đủ</a></li>
+        </ul>
+      </ul>
+
+      <h2 id="1">1. Tầm quan trọng của quản lý thời gian</h2>
+      <p>
+        Thời gian là tài sản quý giá mà mỗi người đều sở hữu. Nó như một đồng hồ
+        cát, một khi đã trôi qua thì không thể lấy lại. Việc biết cách quản lý
+        thời gian hiệu quả không chỉ giúp chúng ta hoàn thành tốt các nhiệm vụ
+        học tập mà còn góp phần xây dựng những thói quen tốt, rèn luyện tính kỷ
+        luật và tự giác.
+      </p>
+      <img src="/img/time-important.jpg" alt="" />
+      <p style="text-align: center; font-weight: bold; margin-top: 8px">
+        Quản lý thời gian là một kỹ năng giúp bạn phân chia, sắp xếp và sử dụng
+        thời gian một cách hiệu quả
+      </p>
+      <p>
+        Khi biết cách lên kế hoạch, ưu tiên công việc và tận dụng tối đa từng
+        phút giây, chúng ta sẽ cảm thấy cuộc sống trở nên có tổ chức hơn, giảm
+        bớt căng thẳng và đạt được nhiều thành công hơn trong học tập cũng như
+        các lĩnh vực khác của cuộc sống. Việc không biết cách quản lý thời gian
+        hiệu quả, làm mất cân bằng giữa học tập và giải trí có thể dẫn đến những
+        hậu quả nghiêm trọng.
+      </p>
+
+      <h2 id="2">2. Tại sao học sinh cần cân bằng giữa học tập và giải trí?</h2>
+      <p>
+        Việc cân bằng giữa học tập và giải trí là yếu tố quyết định đến sự phát
+        triển toàn diện của mỗi học sinh. Dưới đây là những lý do mà bạn cần
+        quản lý thời gian hiệu quả để cân bằng tốt hai khía cạnh này.
+      </p>
+      <h3 id="2.1">2.1. Học tập</h3>
+      <p>
+        Học tập không chỉ đơn thuần là việc ghi nhớ kiến thức trong sách vở mà
+        còn là quá trình khám phá, tìm hiểu và phát triển bản thân:
+      </p>
+      <ul>
+        <li>
+          Tích lũy kiến thức, đạt được mục tiêu học tập: Học tập là con đường để
+          chúng ta tiếp thu kiến thức, rèn luyện kỹ năng và đạt được những mục
+          tiêu đã đề ra. Việc học không chỉ giúp chúng ta có một tương lai tốt
+          đẹp mà còn giúp chúng ta hiểu biết hơn về thế giới xung quanh.
+        </li>
+        <li>
+          Chuẩn bị cho tương lai: Kiến thức và kỹ năng mà chúng ta học được ở
+          trường sẽ là hành trang quan trọng để chúng ta bước vào cuộc sống. Một
+          nền tảng kiến thức vững chắc sẽ giúp chúng ta tự tin hơn trong việc
+          lựa chọn nghề nghiệp và đối mặt với những thử thách trong cuộc sống.
+        </li>
+      </ul>
+      <img src="/img/quanlyTG.jpg" alt="" />
+      <p style="text-align: center; font-weight: bold; margin-top: 8px">
+        Quản lý thời gian giúp bạn tập trung vào những việc quan trọng và đạt
+        được mục tiêu đã đề ra
+      </p>
+
+      <h3 id="2.2">2.2. Giải trí</h3>
+      <p>
+        Giải trí không chỉ là những giây phút thư giãn mà còn là một phần không
+        thể thiếu trong cuộc sống của mỗi người, đặc biệt là đối với các bạn học
+        sinh:
+      </p>
+      <ul>
+        <li>
+          Giảm căng thẳng, tái tạo năng lượng: Sau những giờ học tập căng thẳng,
+          việc tham gia vào các hoạt động giải trí sẽ giúp chúng ta thư giãn,
+          giảm stress và lấy lại năng lượng để tiếp tục học tập.
+        </li>
+        <li>
+          Phát triển kỹ năng mềm và kết nối xã hội: Các hoạt động giải trí như
+          chơi thể thao, tham gia câu lạc bộ, giao lưu bạn bè… sẽ giúp chúng ta
+          rèn luyện các kỹ năng mềm như làm việc nhóm, giao tiếp, giải quyết vấn
+          đề. Đồng thời, đây cũng là cơ hội để chúng ta mở rộng mối quan hệ xã
+          hội và xây dựng những tình bạn đẹp.
+        </li>
+        <li>
+          Tăng cường sức khỏe: Các hoạt động thể chất không chỉ giúp chúng ta
+          giải tỏa căng thẳng mà còn giúp cải thiện sức khỏe, tăng cường hệ miễn
+          dịch và ngăn ngừa các bệnh tật.
+        </li>
+      </ul>
+      <p>
+        Biết cách quản lý thời gian hiệu quả là điều vô cùng quan trọng đối với
+        mỗi học sinh. Khi biết cách cân bằng, chúng ta sẽ không chỉ đạt được
+        thành tích cao trong học tập mà còn có một cuộc sống khỏe mạnh, hạnh
+        phúc và ý nghĩa.
+      </p>
+
+      <h2 id="3">3. Nguyên nhân dẫn đến việc mất cân bằng</h2>
+      <p>
+        Những nguyên nhân chính khiến học sinh thường mất cân bằng giữa học tập
+        và giải trí có thể kể đến như:
+      </p>
+      <img src="/img/quanlyTG2.jpg" alt="" />
+      <p style="text-align: center; font-weight: bold; margin-top: 8px">
+        Quản lý thời gian là một kỹ năng sống quan trọng
+      </p>
+
+      <h3 id="3.1">3.1. Áp lực học tập</h3>
+      <p>
+        Học sinh thường xuyên đối mặt với các kỳ thi và áp lực phải đạt thành
+        tích cao, khiến họ dành phần lớn thời gian cho việc học mà bỏ qua các
+        hoạt động giải trí cần thiết.
+      </p>
+      <p>
+        Sự kỳ vọng từ cha mẹ, thầy cô, hoặc bạn bè tạo thêm gánh nặng, làm học
+        sinh cảm thấy áp lực phải luôn đạt kết quả tốt, đôi khi dẫn đến kiệt
+        sức.
+      </p>
+
+      <h3 id="3.2">3.2. Sự hấp dẫn của các thiết bị điện tử</h3>
+      <p>
+        Các nền tảng như Facebook, TikTok, Instagram có thể dễ dàng “đánh cắp”
+        hàng giờ quý báu của học sinh.
+      </p>
+      <p>
+        Trò chơi điện tử hoặc các nội dung giải trí trực tuyến thường gây
+        nghiện, khiến học sinh khó kiểm soát thời gian và làm giảm sự tập trung
+        vào học tập.
+      </p>
+
+      <h3 id="3.3">3.3. Chưa biết cách quản lý thời gian hiệu quả</h3>
+      <p>
+        Học sinh thiếu kỹ năng xác định công việc quan trọng, dẫn đến việc bỏ lỡ
+        những hoạt động cần thiết như ôn bài hoặc nghỉ ngơi.
+      </p>
+      <p>
+        Việc không có lịch trình cụ thể khiến thời gian bị sử dụng lãng phí hoặc
+        không hợp lý.
+      </p>
+      <p>
+        Thói quen trì hoãn và dễ bị phân tâm làm giảm hiệu quả học tập và gây
+        mất cân bằng.
+      </p>
+      <em
+        ><p>
+          Những nguyên nhân này là rào cản lớn khiến học sinh không thể cân đối
+          thời gian giữa học tập và giải trí. Tuy nhiên, chúng hoàn toàn có thể
+          được khắc phục bằng các cách quản lý thời gian hiệu quả.
+        </p></em
+      >
+
+      <h2 id="4">4. Những cách quản lý thời gian hiệu quả</h2>
+      <p>
+        Lập kế hoạch là một trong những cách quản lý thời gian hiệu quả nhất.
+        Bằng cách lên kế hoạch rõ ràng cho từng ngày hoặc tuần, bạn sẽ có cái
+        nhìn tổng quan về công việc cần làm, ưu tiên các nhiệm vụ và đảm bảo mọi
+        thứ được hoàn thành đúng tiến độ.
+      </p>
+
+      <h3 id="4.1">4.1. Lập kế hoạch hàng ngày/tuần</h3>
+      <p>
+        Xác định mục tiêu: Mỗi ngày hoặc mỗi tuần, hãy lập một danh sách công
+        việc và xác định những nhiệm vụ quan trọng nhất cần hoàn thành.
+      </p>
+      <p>
+        Ưu tiên công việc: Phân loại công việc theo mức độ quan trọng và khẩn
+        cấp. Sử dụng phương pháp Eisenhower Matrix để giúp bạn phân biệt những
+        công việc cần làm ngay và những công việc có thể làm sau.
+      </p>
+
+      <h3 id="4.2">4.2. Sử dụng công cụ hỗ trợ quản lý thời gian</h3>
+      <p>
+        Ứng dụng điện thoại: Các ứng dụng như Google Calendar, Notion, hoặc
+        Todoist giúp bạn lên kế hoạch, nhắc nhở các công việc và theo dõi tiến
+        độ công việc. Từ đó giúp bạn quản lý thời gian hiệu quả hơn.
+      </p>
+      <p>
+        Sổ tay kế hoạch: Một số người thích sử dụng sổ tay để ghi lại lịch trình
+        và nhiệm vụ, giúp họ theo dõi công việc một cách trực quan và dễ dàng.
+      </p>
+
+      <h3 id="4.3">4.3. Áp dụng kỹ thuật Pomodoro</h3>
+      <p>
+        Phương pháp Pomodoro yêu cầu bạn làm việc trong 25 phút (gọi là một
+        Pomodoro) và nghỉ ngơi 5 phút. Sau 4 Pomodoro, bạn có thể nghỉ dài hơn
+        (15 – 30 phút). Kỹ thuật này giúp tăng cường sự tập trung và giảm mệt
+        mỏi.
+      </p>
+
+      <h3 id="4.4">4.4. Hạn chế sự xao lãng</h3>
+      <p>
+        Tắt thông báo điện thoại: Khi làm việc, hãy tắt các thông báo không cần
+        thiết trên điện thoại hoặc máy tính để tránh bị phân tâm.
+      </p>
+      <p>
+        Chọn không gian học tập lý tưởng: Lựa chọn không gian yên tĩnh, ít xao
+        lãng để tối ưu hóa sự tập trung.
+      </p>
+
+      <h3 id="4.5">4.5. Sử dụng thời gian chờ đợi</h3>
+      <p>
+        Khi có những khoảng thời gian trống (chờ xe buýt, chờ bạn bè…), bạn có
+        thể tranh thủ đọc sách, nghe podcast, hoặc ôn lại bài học để không lãng
+        phí thời gian.
+      </p>
+
+      <img src="/img/dung-han.jpg" alt="" />
+      <p style="text-align: center; font-weight: bold; margin-top: 8px">
+        Khi bạn hoàn thành công việc đúng hạn, bạn sẽ cảm thấy tự tin hơn về bản
+        thân
+      </p>
+
+      <h3 id="4.6">4.6. Học cách nói “không”</h3>
+      <p>
+        Để nắm được cách quản lý thời gian hiệu quả, bạn cần biết từ chối những
+        yêu cầu hoặc lời mời không phù hợp, không quan trọng để tập trung vào
+        những công việc cần thiết.
+      </p>
+
+      <h3 id="4.7">4.7. Giữ sự linh hoạt trong kế hoạch</h3>
+      <p>
+        Đôi khi, kế hoạch có thể thay đổi do các yếu tố ngoài ý muốn. Hãy linh
+        hoạt và điều chỉnh lại lịch trình khi cần thiết, đừng để một sự thay đổi
+        nhỏ làm bạn cảm thấy bị rối loạn.
+      </p>
+
+      <h3 id="4.8">4.8. Thư giãn và nghỉ ngơi đầy đủ</h3>
+      <p>
+        Một trong những cách quản lý thời gian hiệu quả đó là không nên chỉ làm
+        việc mà còn phải dành ra những khoảng nghỉ ngơi. Hãy chắc chắn bạn dành
+        đủ thời gian để thư giãn, tái tạo năng lượng để làm việc hiệu quả hơn
+        trong những giờ tiếp theo.
+      </p>
+
+      <p>
+        Bài viết trên vừa chia sẻ cho bạn các cách quản lý thời gian hiệu quả.
+        Quản lý thời gian hiệu quả mang lại nhiều lợi ích to lớn cho học sinh,
+        từ việc đạt thành tích cao trong học tập đến tận hưởng một cuộc sống cân
+        bằng và ý nghĩa. Học sinh không chỉ hoàn thành tốt nhiệm vụ học tập mà
+        còn có thời gian để thư giãn, phát triển kỹ năng cá nhân và xây dựng mối
+        quan hệ xã hội.
+      </p>
+    </div>
+    <div id="footer-container"></div>
+    <script>
+      fetch("footer.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("footer-container").innerHTML = data;
+        });
+
+      fetch("/api/user", { credentials: "include" })
+        .then((res) => res.json())
+        .then((data) => {
+          const nav = document.getElementById("navUserArea");
+          if (!nav) return;
+
+          if (data && data.name) {
+            nav.innerHTML = `
+              <img id="userAvatar" src="${
+                data.avatar || "/img/default-avt.png"
+              }" alt="Avatar" />
+              <span id="userName">${data.name}</span>
+            `;
+          } else {
+            nav.innerHTML = `<button class="login-btn" onclick="window.location.href='/about.html'">Đăng nhập</button>`;
+          }
+        })
+        .catch(() => {
+          const nav = document.getElementById("navUserArea");
+          if (nav) {
+            nav.innerHTML = `<button class="login-btn" onclick="window.location.href='/about.html'">Đăng nhập</button>`;
+          }
+        });
+    </script>
+  </body>
+</html>

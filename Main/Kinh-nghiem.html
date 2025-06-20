@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kinh nghiệm ôn thi | LearnQuiz</title>
+  <link rel="stylesheet" href="/css/tool.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+</head>
+<body>
+  <header>
+  </header>
+   <nav class="navbar">
+      <div class="nav-logo">
+        <img src="/img/ảnhlogo-removebg-preview.png" alt="Logo" />
+      </div>
+      <div class="nav-buttons" id="navUserArea"></div>
+    </nav>
+
+  <main class="tools-container">
+    <h1 class="page-title">Kinh nghiệm ôn thi</h1>
+    
+    <div class="tools-grid">
+      <div class="tool-card">
+        <img src="/img/taptrung.png" alt="" />
+        <span class="tool-tag">Kinh nghiệm ôn thi</span>
+        <h2>Những cách tập trung học hiệu quả, ghi nhớ kiến thức lâu</h2>
+        <p>Cách tập trung học là yếu tố quyết định giúp bạn nâng cao hiệu suất và tiết kiệm thời gian. Tuy nhiên, việc duy trì sự tập trung [...]</p>
+        <a href="10C-TAPTRUNG.html" class="read-more">Đọc thêm →</a>
+      </div>
+
+      <div class="tool-card">
+        <img src="/img/time.png" alt="Tool 2" />
+        <span class="tool-tag">Kinh nghiệm ôn thi</span>
+        <h2>Cân bằng giữa học tập và giải trí: Cách quản lý thời gian hiệu quả cho học sinh</h2>
+        <p>Bạn luôn cảm thấy mệt mỏi, căng thẳng vì không hoàn thành được hết công việc? Vấn đề  [...]</p>
+        <p class="tool-date">Ngày 20 tháng 01 năm 2025</p>
+        <a href="Can-Bang.html" class="read-more">Đọc thêm →</a>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+<script>
+  fetch('footer.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('footer-container').innerHTML = data;
+    });
+
+    fetch("/api/user", { credentials: "include" })
+        .then((res) => res.json())
+        .then((data) => {
+          const nav = document.getElementById("navUserArea");
+          if (!nav) return;
+
+          if (data && data.name) {
+            nav.innerHTML = `
+              <img id="userAvatar" src="${
+                data.avatar || "/img/default-avt.png"
+              }" alt="Avatar" />
+              <span id="userName">${data.name}</span>
+            `;
+          } else {
+            nav.innerHTML = `<button class="login-btn" onclick="window.location.href='/about.html'">Đăng nhập</button>`;
+          }
+        })
+        .catch(() => {
+          const nav = document.getElementById("navUserArea");
+          if (nav) {
+            nav.innerHTML = `<button class="login-btn" onclick="window.location.href='/about.html'">Đăng nhập</button>`;
+          }
+        });
+</script>
+</body>
+</html>

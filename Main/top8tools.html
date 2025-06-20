@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top phần mềm học tập</title>
+    <link rel="stylesheet" href="/css/footer.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #fff;
+        color: #222;
+        line-height: 1.6;
+      }
+
+      /* ==== NAVBAR ==== */
+      .navbar {
+        position: sticky;
+        top: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #ffffff;
+        padding: 10px 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+      }
+
+      .nav-logo img {
+        height: 40px;
+      }
+
+      .nav-buttons {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .login-btn {
+        background: linear-gradient(90deg, #8b5cf6, #ec4899);
+        border: none;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .login-btn:hover {
+        background: linear-gradient(90deg, #ec4899, #8b5cf6);
+      }
+
+      #userAvatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+      }
+
+      #userName {
+        font-weight: bold;
+      }
+
+      /* Phần nền intro tím full màn hình */
+      .intro-section {
+        background: #e6d9fb;
+        padding: 60px 80px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .intro-text {
+        flex: 1;
+      }
+
+      .intro-tag {
+        display: inline-block;
+        background: linear-gradient(to right, #ec4899, #8b5cf6);
+        color: #fff;
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 20px;
+        margin-bottom: 12px;
+      }
+      .intro-title {
+        font-size: 32px;
+        font-weight: bold;
+        margin: 10px 0;
+      }
+
+      .intro-image {
+        flex: 1;
+        text-align: center;
+      }
+
+      .intro-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      /* Nội dung chính: thụt vào, giống kiểu blog */
+      .content {
+        max-width: 960px;
+        margin: 40px auto;
+        padding: 0 20px;
+      }
+
+      .content p {
+        margin-bottom: 16px;
+        font-size: 16px;
+      }
+
+      .content h2 {
+        font-size: 22px;
+        margin-top: 40px;
+        color: #1a1a1a;
+      }
+
+      .content img {
+        max-width: 100%;
+        display: block;
+        margin: 20px 0;
+        border-radius: 8px;
+      }
+
+      .content ul {
+        padding-left: 20px;
+      }
+
+      .content a {
+        color: #6200ea;
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .intro-section {
+          padding: 40px 20px;
+        }
+        .intro-title {
+          font-size: 24px;
+        }
+        .content {
+          margin: 20px auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-logo">
+        <img src="/img/ảnhlogo-removebg-preview.png" alt="Logo" />
+      </div>
+      <div class="nav-buttons" id="navUserArea"></div>
+    </nav>
+
+    <section class="intro-section">
+      <div class="intro-text">
+        <span class="intro-tag">Công cụ học tập</span>
+        <h1 class="intro-title">
+          Top 8 phần mềm học tập trên máy tính giúp bạn học tập hiệu quả
+        </h1>
+      </div>
+      <div class="intro-image">
+        <img src="/img/8app.png" alt="Top phần mềm học tập" />
+      </div>
+    </section>
+
+    <div class="content">
+      <p>
+        <strong><em>Phần mềm học tập trên máy tính</em></strong> đang trở thành
+        công cụ hỗ trợ đắc lực giúp nâng cao hiệu suất và tối ưu hóa quá trình
+        học tập. Trong bài viết này, <strong>LearnQuiz</strong> sẽ giới thiệu
+        Top 7 ứng dụng học tập trên máy tính để bạn có thể lựa chọn và áp dụng
+        vào học tập một cách hiệu quả.
+      </p>
+
+      <h3>Mục Lục</h3>
+      <ul>
+        <li><a href="#eduquiz">1. EduQuiz – Phần mềm học tập hiệu quả</a></li>
+        <li><a href="#zoom">2. Zoom</a></li>
+        <li><a href="#classroom">3. Google Classroom</a></li>
+        <li><a href="#khan">4. Khan Academy</a></li>
+        <li><a href="#onenote">5. Microsoft OneNote</a></li>
+        <li><a href="#vioedu">6. VioEdu</a></li>
+        <li><a href="#kahoot">7. Kahoot</a></li>
+        <li><a href="#azota">8. Azota</a></li>
+      </ul>
+
+      <h2 id="eduquiz">1. EduQuiz – Phần mềm học tập trên máy tính hiệu quả</h2>
+      <p>
+        EduQuiz là phần mềm thi trắc nghiệm online hàng đầu hiện nay. Với
+        EduQuiz, bạn sẽ có thể nhanh chóng nâng cao điểm số thông qua các tính
+        năng thiết thực như tạo đề ôn thi, tìm kiếm đề thi, thi thử... Ứng dụng
+        này phù hợp cho học sinh, sinh viên và cả các thầy cô giáo, tổ chức giáo
+        dục, các đơn vị có nhu cầu tổ chức thi trực tuyến.
+      </p>
+      <p>
+        Người dùng có thể dễ dàng luyện tập, đánh giá năng lực và theo dõi kết
+        quả chi tiết sau mỗi lần làm bài.
+      </p>
+      <a href="https://eduquiz.vn/"><img src="/img/eduquiz.jpg" alt="EduQuiz" /></a>
+      <p style="text-align: center; font-weight: bold; margin-top: 8px">
+        EduQuiz – Phần mềm học tập trên máy tính hiệu quả
+      </p>
+      <p><strong>Một số tính năng nổi bật của EduQuiz:</strong></p>
+      <ul>
+        <li>
+          <strong>Kho đề thi khổng lồ:</strong> Phần mềm sở hữu kho đề thi khổng
+          lồ với đầy đủ kiến thức từ cơ bản đến nâng cao của tất cả các môn học.
+          Hệ thống đề thi của EduQuiz bao gồm đa dạng các ngành học, cấp học và
+          nhiều lĩnh vực khác nhau.
+        </li>
+        <li>
+          <strong>Tự tạo đề và chia sẻ đề thi:</strong> Người dùng có thể tự tạo
+          đề thi cho mình và chia sẻ đề thi đã tạo đến các nhóm học tập. EduQuiz
+          hỗ trợ người dùng tự tạo đề thi một cách đơn giản, nhanh chóng bằng 3
+          cách: Tạo đề cực nhanh với AI, văn bản có sẵn hoặc trình soạn thảo…
+        </li>
+        <li>
+          <strong>Nhiều chế độ luyện thi hiệu quả:</strong> Bạn có thể lựa chọn
+          nhiều chế độ luyện thi như: Tổng ôn kiến ​​thức, Thi thử, Ôn thi bằng
+          Flashcard…
+        </li>
+        <li>
+          <strong>Thi thử như thi thật:</strong> Với tính năng thi thử, EduQuiz
+          giúp người dùng làm quen với định dạng bài thi. Đồng thời rèn luyện
+          kiến ​​thức cũng như tâm lý trước khi bước vào kỳ thi chính thức.
+        </li>
+        <li>
+          <strong>Thống kê kết quả chi tiết:</strong> Khi bạn ôn tập trên
+          EduQuiz, phần mềm sẽ cung cấp kết quả chi tiết ngay khi bạn kết thúc
+          bài thi. Với số liệu thống kê kết quả thi, bạn sẽ có thể tự đánh giá
+          năng lực một cách chính xác.
+        </li>
+        <li>
+          <strong>Giao diện thân thiện với người dùng:</strong> EduQuiz có giao
+          diện trực quan và dễ sử dụng đối với người dùng mới bắt đầu làm quen
+          với nền tảng.
+        </li>
+      </ul>
+
+      <!-- Thêm các mục khác tương tự -->
+      <h2 id="zoom">2. Zoom</h2>
+      <p>
+        Zoom là một phần mềm học tập trên máy tính hỗ trợ quá trình học trực
+        tuyến. Với khả năng kết nối học sinh và giáo viên qua video call, Zoom
+        giúp tạo ra các lớp học và các buổi thảo luận nhóm online.
+      </p>
+      <p>
+        Phần mềm này hỗ trợ các tính năng như chia sẻ màn hình, bảng trắng trực
+        tuyến, ghi lại buổi học và phân chia phòng học nhóm, giúp học sinh tương
+        tác và trao đổi ý tưởng hiệu quả.
+      </p>
+      <a href="https://www.zoom.com/vi"><img src="/img/zoom.png" alt="Zoom" /></a>
+      <p style="text-align: center; font-weight: bold; margin-top: 8px">
+        Zoom – Phần mềm học tập trực tuyến trên máy tính
+      </p>
+      <strong><p>Một số tính năng nổi bật của Zoom bao gồm:</p></strong>
+      <ul>
+        <li>
+          Họp trực tuyến, chia sẻ màn hình, bảng trắng, phòng chờ và ghi âm cuộc
+          họp.
+        </li>
+        <li>
+          Đối với người tạo, chỉ cần tạo tài khoản Zoom, lên lịch cuộc họp và
+          chia sẻ đường link cho người tham gia.
+        </li>
+        <li>
+          Đối với người tham gia, chỉ cần nhấp vào đường link được chia sẻ để
+          tham gia cuộc họp.
+        </li>
+      </ul>
+      <p>
+        <strong>Tuy nhiên,</strong> một số tính năng có thể yêu cầu trả phí và
+        cần kết nối internet để sử dụng.
+      </p>
+
+      <h2 id="classroom">3. Google Classroom</h2>
+      <p>
+        <strong>Google Classroom</strong> là một phần mềm học tập trên máy tính,
+        được thiết kế để hỗ trợ việc giảng dạy và học tập trực tuyến. Với Google
+        Classroom, giáo viên có thể tạo lớp học, giao bài tập, gửi tài liệu và
+        tổ chức các hoạt động học tập một cách dễ dàng. Học sinh có thể truy cập
+        bài giảng, nộp bài tập, và nhận phản hồi từ giáo viên ngay trên nền tảng
+        này.
+      </p>
+      <img src="/img/gg-class.jpg" alt="Google Classroom" />
+      <p style="text-align: center; font-weight: bold; margin-top: 8px">
+        Google Classroom – Phần mềm quản lý lớp học trực tuyến trên máy tính
+      </p>
+      <p>
+        Phần mềm tích hợp chặt chẽ với các công cụ của Google như Google Drive,
+        Google Docs và Google Meet, giúp việc chia sẻ tài liệu và tổ chức lớp
+        học trở nên liền mạch.
+      </p>
+      <p>
+        Google Classroom cũng hỗ trợ theo dõi tiến độ học tập của học sinh, gửi
+        thông báo về các bài tập và hạn nộp, giúp việc quản lý lớp học trở nên
+        hiệu quả hơn. Với giao diện đơn giản và dễ sử dụng, Google Classroom là
+        công cụ lý tưởng cho các lớp học trực tuyến.
+      </p>
+
+      <h2 id="khan">4. Khan Academy</h2>
+      <p>
+        <strong>Khan Academy</strong> là một phần mềm học tập trên máy tính miễn
+        phí, cung cấp kho tài liệu phong phú với nhiều chủ đề từ toán học, khoa
+        học, lịch sử, kinh tế đến lập trình. Phần mềm này sử dụng các bài giảng
+        video chất lượng cao, kết hợp với các bài tập thực hành và bài kiểm tra,
+        giúp người học tiếp thu kiến thức một cách dễ dàng và trực quan.
+      </p>
+      <img src="/img/khan.png" alt="Khan Academy" />
+      <p style="text-align: center; font-weight: bold; margin-top: 8px">
+        Khan Academy – Phần mềm học tập trực tuyến miễn phí trên máy tính
+      </p>
+      <p>
+        Khan Academy cung cấp các bài học từ tiểu học đến đại học với các bài
+        giảng được thiết kế giúp người học hiểu sâu hơn về các khái niệm. Ngoài
+        ra, phần mềm còn có hệ thống theo dõi tiến độ học tập, giúp người học
+        đánh giá kết quả và cải thiện những điểm yếu. Với nội dung miễn phí và
+        chất lượng, Khan Academy là một công cụ học tập tuyệt vời cho những ai
+        muốn tự học và ôn luyện các môn học một cách hiệu quả.
+      </p>
+      <h2 id="onenote">5. Microsoft OneNote</h2>
+      <p>
+        <strong>Microsoft OneNote</strong> là một phần mềm học tập trên máy tính
+        giúp người dùng ghi chép, sắp xếp và lưu trữ thông tin một cách khoa
+        học. Với giao diện giống như sổ tay kỹ thuật số, OneNote cho phép tạo
+        ghi chú bằng văn bản, hình ảnh, bản vẽ tay, âm thanh và video, giúp học
+        sinh, sinh viên dễ dàng tổ chức và quản lý tài liệu học tập.
+      </p>
+      <img src="/img/MS-oneNote.jpg" alt="OneNote" />
+      <p style="text-align: center; font-weight: bold; margin-top: 8px">
+        Microsoft OneNote – Phần mềm ghi chép và quản lý bài học trên máy tính
+      </p>
+      <p>
+        Phần mềm hỗ trợ đồng bộ hóa trên nhiều thiết bị, giúp người dùng truy
+        cập ghi chú mọi lúc, mọi nơi. Ngoài ra, Microsoft OneNote còn có tính
+        năng phân loại ghi chú theo sổ tay, trang và thẻ, giúp tìm kiếm thông
+        tin nhanh chóng. Người dùng cũng có thể chia sẻ ghi chú để học nhóm hoặc
+        làm việc chung hiệu quả. Với các công cụ hỗ trợ mạnh mẽ, OneNote là lựa
+        chọn lý tưởng để tối ưu hóa việc ghi chép và học tập.
+      </p>
+
+      <h2 id="vioedu">6. VioEdu</h2>
+      <p>
+        VioEdu là một phần mềm học tập trên máy tính được phát triển dành riêng
+        cho học sinh tại Việt Nam, cung cấp các khóa học từ lớp 1 đến lớp 12.
+        Phần mềm này hỗ trợ nhiều môn học như toán, lý, hóa, văn và tiếng Anh
+        với hệ thống bài giảng video giúp học sinh ôn tập và củng cố kiến thức
+        một cách hiệu quả.
+      </p>
+      <img src="/img/Vioedu.jpg" alt="VioEdu" />
+      <p style="text-align: center; font-weight: bold; margin-top: 8px">
+        VioEdu – Phần mềm học tập trực tuyến thông minh trên máy tính
+      </p>
+      <p>
+        Ngoài ra, VioEdu sử dụng công nghệ trí tuệ nhân tạo (AI) để cá nhân hóa
+        lộ trình học tập, nhận diện những điểm yếu của học sinh và đề xuất bài
+        tập phù hợp. Phần mềm còn có hệ thống đánh giá kết quả học tập chi tiết,
+        giúp phụ huynh và giáo viên theo dõi sự tiến bộ của học sinh. Với giao
+        diện thân thiện và nội dung phong phú, VioEdu là công cụ hỗ trợ học tập
+        lý tưởng cho học sinh Việt Nam.
+      </p>
+
+      <h2 id="kahoot">7. Kahoot</h2>
+      <p>
+        Kahoot là một phần mềm học tập trên máy tính giúp biến việc học thành
+        những trò chơi tương tác thú vị. Phần mềm này cho phép giáo viên tạo các
+        câu hỏi trắc nghiệm, khảo sát hoặc bài kiểm tra dưới dạng trò chơi, giúp
+        học sinh tham gia học tập một cách hào hứng và chủ động hơn. Người học
+        có thể trả lời câu hỏi trên máy tính hoặc điện thoại theo thời gian
+        thực, tạo ra môi trường học tập sôi động và hiệu quả.
+      </p>
+      <img src="/img/kahoot.png" alt="Kahoot" />
+      <p style="text-align: center; font-weight: bold; margin-top: 8px">
+        Kahoot – Phần mềm học tập qua trò chơi trắc nghiệm trên máy tính
+      </p>
+      <p>
+        Ngoài ra, Kahoot còn có tính năng xếp hạng, hiển thị điểm số sau mỗi câu
+        hỏi, giúp tăng tính cạnh tranh lành mạnh và thúc đẩy học sinh ôn tập
+        kiến thức. Phần mềm này phù hợp cho cả lớp học trực tuyến và trực tiếp,
+        hỗ trợ giáo viên đánh giá nhanh mức độ hiểu bài của học sinh. Với cách
+        tiếp cận sáng tạo, Kahoot là công cụ lý tưởng để nâng cao trải nghiệm
+        học tập và giúp học sinh tiếp thu kiến thức một cách dễ dàng hơn.
+      </p>
+
+      <h2 id="azota">8. Azota</h2>
+      <p>
+        Azota là phần mềm hỗ trợ giáo viên giao bài, thu bài và chấm bài trắc
+        nghiệm tự động một cách nhanh chóng. Với nền tảng hoạt động hoàn toàn
+        online, Azota giúp giáo viên tiết kiệm thời gian trong việc tổ chức kiểm
+        tra, đặc biệt là trong các lớp học trực tuyến hoặc khi không thể tổ chức
+        thi trên giấy.
+      </p>
+      <img src="/img/azota.jpg" alt="Azota" />
+      <p style="text-align: center; font-weight: bold; margin-top: 8px">
+        Azota – Giao và chấm bài trắc nghiệm trực tuyến
+      </p>
+      <p>
+        Một trong những điểm mạnh nổi bật của Azota là khả năng tạo đề thi từ
+        file Word hoặc Excel, sau đó gửi link cho học sinh làm bài trực tiếp. Hệ
+        thống tự động thu bài, chấm điểm và phân tích kết quả, giúp giáo viên dễ
+        dàng đánh giá năng lực học sinh theo từng bài kiểm tra. Ngoài ra, Azota
+        còn hỗ trợ quản lý danh sách lớp, thống kê kết quả và xuất file Excel
+        tiện lợi. Đây là công cụ rất hữu ích cho giáo viên trong việc kiểm tra,
+        đánh giá thường xuyên và định kỳ một cách hiệu quả.
+      </p>
+    </div>
+    <div id="footer-container"></div>
+    <script>
+      fetch("footer.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("footer-container").innerHTML = data;
+        });
+
+      fetch("/api/user", { credentials: "include" })
+        .then((res) => res.json())
+        .then((data) => {
+          const nav = document.getElementById("navUserArea");
+          if (!nav) return;
+
+          if (data && data.name) {
+            nav.innerHTML = `
+              <img id="userAvatar" src="${
+                data.avatar || "/img/default-avt.png"
+              }" alt="Avatar" />
+              <span id="userName">${data.name}</span>
+            `;
+          } else {
+            nav.innerHTML = `<button class="login-btn" onclick="window.location.href='/about.html'">Đăng nhập</button>`;
+          }
+        })
+        .catch(() => {
+          const nav = document.getElementById("navUserArea");
+          if (nav) {
+            nav.innerHTML = `<button class="login-btn" onclick="window.location.href='/about.html'">Đăng nhập</button>`;
+          }
+        });
+    </script>
+  </body>
+</html>

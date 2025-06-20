@@ -1,0 +1,467 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #f5f7fa;
+  color: #1e293b;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 999;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #5a00d3;
+}
+
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.logo img {
+  width: 150px;
+  height: auto;
+}
+
+.icon {
+  margin-right: 10px;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.image-box {
+  max-width: 45%;
+}
+
+.image-box img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+}
+
+.image-side {
+  flex: 1;
+  text-align: center;
+}
+
+.image-side img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.text-side {
+  flex: 1;
+}
+
+#userName {
+  font-size: 16px;
+  color: #000000;
+}
+
+.section-title {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 24px;
+  color: #eee;
+}
+
+nav #userName {
+  font-weight: bold;
+}
+
+.content {
+  flex: 1;
+  padding: 30px;
+  overflow: auto;
+}
+
+.main-content {
+  display: flex;
+  margin-top: 60px;
+}
+
+/* SIDEBAR BÊN TRÁI */
+.sidebar {
+  width: 250px;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  user-select: none;
+}
+
+.section-header:hover {
+  color: #00bfff;
+}
+
+.arrow {
+  transition: transform 0.3s;
+}
+
+.section-content {
+  list-style: none;
+  padding-left: 1rem;
+  margin: 0;
+  display: block;
+}
+
+.section-content.hidden {
+  display: none;
+}
+
+.section-content li {
+  padding: 0.3rem 0;
+}
+
+.section-content a {
+  color: #0a0a0a;
+  text-decoration: none;
+}
+
+.section-content a:hover {
+  color: #5a00d3;
+}
+
+/* NỘI DUNG CHÍNH */
+.section-title {
+  color: #0a0a0a;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.subject-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.subject-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.subject-card {
+  background: #4678be;
+  border-radius: 12px;
+  width: 250px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  margin: 16px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+.subject-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heart-icon {
+  font-size: 22px;
+  color: #ccc;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+  margin-top: 8px; /* tạo khoảng cách trên */
+}
+
+.heart-icon.favorited {
+  color: red;
+}
+
+.heart-icon.clicked {
+  transform: scale(1.3);
+}
+
+.subject-info {
+  padding: 16px;
+  text-align: center;
+}
+
+.subject-info h3 {
+  margin-bottom: 12px;
+  font-size: 18px;
+  color: #1e1e1e;
+}
+
+.btn-start {
+  background: linear-gradient(to right, #8b5cf6, #ec4899);
+  color: white;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.btn-start:hover {
+  background: #cc0000;
+}
+
+.result-card {
+  background-color: #1e1e1e;
+  border: 1px solid #444;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+/* thanh thông tin */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* làm mờ nền */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  padding: 2px;
+  border-radius: 16px;
+  background: linear-gradient(
+    to right,
+    #8b5cf6,
+    #ec4899
+  ); /* viền loang 2 màu */
+  width: 420px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content > div {
+  background-color: white; /* nền trắng bên trong */
+  border-radius: 14px;
+  padding: 24px;
+  color: black;
+  font-family: sans-serif;
+  position: relative;
+}
+
+.popup-content h2 {
+  margin-top: 0;
+  font-size: 22px;
+  text-align: center;
+}
+
+.popup-content p {
+  margin: 12px 0;
+  font-size: 16px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #888;
+}
+
+.close-btn:hover {
+  color: #000;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.popup-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.popup-buttons button:first-child {
+  background-color: #22c55e; /* xanh lá */
+}
+
+.popup-buttons button:last-child {
+  background-color: #ef4444; /* đỏ */
+}
+
+.popup-buttons button:hover {
+  opacity: 0.9;
+}
+/* css edit profile */
+#editProfileForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#editProfileForm label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: #333;
+}
+
+#editProfileForm input,
+#editProfileForm select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+#editProfileForm input:focus,
+#editProfileForm select:focus {
+  outline: none;
+  border-color: #8b5cf6;
+}
+
+#editProfileForm button[type="submit"] {
+  background: linear-gradient(to right, #22c55e, #4ade80); /* xanh lá */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#editProfileForm button[type="submit"]:hover {
+  background: linear-gradient(to right, #16a34a, #22c55e);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Tiêu đề kết quả */
+#resultList h2 {
+  font-family: "Segoe UI", sans-serif;
+  font-size: 20px;
+  color: #ffffff;
+  background-color: #1e1e2f;
+  padding: 10px 16px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  text-align: center; /* Căn giữa tiêu đề */
+}
+
+/* Bảng kết quả */
+#resultList table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 15px;
+  background-color: #1e1e2f;
+  color: #f0f0f0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Header bảng */
+#resultList th {
+  background-color: #2a2a2a;
+  color: #4dd0e1;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 12px 16px;
+}
+
+/* Dòng dữ liệu */
+#resultList td {
+  padding: 12px 16px;
+  text-align: center;
+  color: #f0f0f0;
+}
+
+/* Màu nền từng dòng cố định */
+#resultList tbody tr:nth-child(odd) {
+  background-color: #2c2f3c;
+}
+
+#resultList tbody tr:nth-child(even) {
+  background-color: #232632;
+}
+
+/* Tô điểm cho cột điểm */
+#resultList td:nth-child(2) {
+  font-weight: bold;
+  color: #4caf50;
+}
+
+#searchInput {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 17px;
+  width: 350px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  max-width: 450px;
+  flex-grow: 1;
+  margin: 0 16px;
+}
+
+#searchInput:focus {
+  outline: none;
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.25);
+}
+
+@media (max-width: 600px) {
+  #searchInput {
+    width: 100%;
+    margin-top: 10px;
+  }
+}

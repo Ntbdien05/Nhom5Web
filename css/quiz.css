@@ -1,0 +1,384 @@
+.quiz-wrapper {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9faff;
+  min-height: 70vh;
+}
+
+/* Sidebar và mục lục câu hỏi chung */
+.sidebar,
+.question-nav {
+  width: 20%;
+  background: #fefefe;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  user-select: none;
+}
+
+/* Các nút trong sidebar */
+.sidebar button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 123, 255, 0.4);
+  transition: background-color 0.3s ease, transform 0.15s ease;
+}
+.sidebar button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+.sidebar button:active {
+  transform: scale(0.98);
+}
+
+/* Nội dung chính câu hỏi */
+.main-content {
+  width: 60%;
+}
+
+/* Khung câu hỏi */
+.question {
+  background: #ffffff;
+  padding: 20px 25px;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+  color: #222;
+  line-height: 1.5;
+}
+
+/* Các label chứa đáp án */
+.question label {
+  display: block;
+  padding: 10px 15px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1.8px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  user-select: none;
+  font-weight: 500;
+  color: #333;
+}
+
+.question label:hover {
+  background-color: #f0f7ff;
+  border-color: #007bff;
+}
+
+/* Radio inputs ẩn nhưng vẫn có thể được chọn khi click label */
+.question input[type="radio"] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Mục lục câu hỏi */
+.question-nav {
+  padding: 15px 20px;
+}
+
+/* Lưới nút câu hỏi */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+/* Nút số câu hỏi */
+.grid button {
+  padding: 12px 0;
+  border: none;
+  background: #e2e6ea;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  box-shadow: inset 0 -3px 0 #b0b8bf;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+}
+.grid button:hover {
+  background-color: #007bff;
+  color: white;
+  box-shadow: 0 3px 8px rgba(0, 123, 255, 0.5);
+}
+.grid button.active {
+  background: #0056b3;
+  color: white;
+  box-shadow: 0 5px 12px rgba(0, 86, 179, 0.7);
+}
+
+/* Điều khiển chuyển câu */
+.nav-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.nav-controls button {
+  flex: 1;
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  color: white;
+  box-shadow: 0 3px 8px rgba(0, 123, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-controls button:hover {
+  background: linear-gradient(90deg, #00f2fe, #4facfe);
+  transform: scale(1.05);
+}
+
+.nav-controls button:active {
+  transform: scale(0.97);
+}
+
+/* Countdown overlay */
+#countdownOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 5rem;
+  font-weight: 700;
+  z-index: 9999;
+  user-select: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#autoNext {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  appearance: none; /* ẩn mũi tên mặc định trên nhiều trình duyệt */
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23007bff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px 16px;
+}
+
+#autoNext:hover {
+  background-color: #e6f0ff;
+}
+
+#autoNext:focus {
+  outline: none;
+  border-color: #0056b3;
+  box-shadow: 0 0 5px #0056b3;
+  background-color: #dbe9ff;
+}
+
+#countdownOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+}
+
+.countdown-container {
+  text-align: center;
+}
+
+.countdown-container p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.circle-timer {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+}
+
+.circle-timer svg {
+  width: 120px;
+  height: 120px;
+  transform: rotate(-90deg);
+}
+
+.circle-timer circle {
+  fill: none;
+  stroke-width: 12;
+}
+
+circle.bg {
+  stroke: #eee;
+}
+
+circle.progress {
+  stroke: #007bff;
+  stroke-dasharray: 339.292;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s linear;
+}
+
+#countdownNumber {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Nút Nộp bài */
+#submitBtn {
+  background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+  color: white;
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-top: 25px;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(255, 107, 107, 0.4);
+}
+
+#submitBtn:hover {
+  background: linear-gradient(135deg, #ff8e53, #ff6b6b);
+  transform: translateY(-2px);
+}
+
+/* Pop-up kết quả */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* nền mờ */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.popup.hidden {
+  display: none;
+}
+
+.popup-content {
+  background-color: #2c2c2e; /* dark mode */
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+}
+
+.popup-content h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: #4fc3f7; /* màu xanh sáng */
+}
+
+.popup-content p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.popup-content button {
+  background-color: #e53935; /* đỏ */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.popup-content button:hover {
+  background-color: #b71c1c;
+}
+
+#timerBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e3f2fd;
+  border: 2px solid #64b5f6;
+  color: #1565c0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px 16px;
+  border-radius: 12px;
+  margin: 10px 0;
+  box-shadow: inset 0 0 5px #bbdefb;
+}
+
+#progressInfo {
+  background-color: #f5f5f5;
+  border-left: 4px solid #007bff;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #333;
+}
+
+.ML {
+  text-align: center;
+  font-weight: bold;
+  font-size: 22px;
+  color: #2c3e50;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

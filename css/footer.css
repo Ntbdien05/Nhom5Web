@@ -1,0 +1,91 @@
+/* Footer full width với nền đen */
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+}
+
+#footer-container,
+.site-footer {
+  flex-shrink: 0;
+}
+
+.site-footer {
+  width: 100%;
+  background-color: #222;
+  color: #fff;
+  padding: 40px 0; /* padding rộng đều hơn */
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+/* Nội dung trong footer giới hạn chiều rộng và căn giữa */
+.footer-content {
+  max-width: 800px; /* đồng bộ với .container của trang */
+  margin: 0 auto;
+  padding: 0 20px; /* dùng padding nhẹ để không bị sát mép */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+/* Các liên kết */
+.site-footer a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-size: 15px; /* đồng bộ cỡ chữ */
+}
+
+.site-footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Phần nội dung bên trong từng cột */
+.footer-section {
+  margin-bottom: 20px;
+  min-width: 200px;
+}
+
+.footer-section h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #f1f1f1;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section li {
+  margin-bottom: 8px;
+}
+
+/* Đường phân chia dọc giữa các khối */
+.footer-divider {
+  width: 1px;
+  background-color: #555;
+  min-height: 100px;
+}
